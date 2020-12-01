@@ -8,7 +8,7 @@
 
 
 
-/* SECTION 1 -- INTRO ANIMATION */
+/* SECTION 1 -- INTRO PAGE + ANIMATION */
 /* Debut of Narrative - AI greets user story point. */
 /* Code help from Stackoverflow https://stackoverflow.com/questions/57982722/make-blinking-cursor-disappear-at-end-of-css-animation */
 
@@ -51,7 +51,7 @@ html{
         padding-left: 10px;
         opacity: 0;
         animation: typing 3.5s steps(44, end), blink-caret .75s step-end 4.1, slidein 1s ease 3.5s forwards;
-        animation-delay: 3.5s;
+        animation-delay: 2s;
       }
       .typewriter3 p {
           overflow: hidden;
@@ -64,9 +64,25 @@ html{
           letter-spacing: 0;
           padding-left: 10px;
           opacity: 0;
-          animation: typing 3.5s steps(44, end), blink-caret .75s step-end infinite, slidein 1s ease 3.5s forwards;
-          animation-delay: 3.5s;
+          animation: typing 3.5s steps(44, end), blink-caret .75s step-end /* add infinite for continuous blinking animation */, slidein 1s ease 3.5s forwards;
+          animation-delay: 7s;
         }
+
+        .typewriter4 p {
+          overflow: hidden;
+          /* Ensures the content is not revealed until the animation */
+          border-right: 2px solid transparent;
+          white-space: nowrap;
+          margin: 0 auto;
+          font-size: 180%;
+          text-align: center;
+          letter-spacing: 0;
+          padding-left: 10px;
+          opacity: 0;
+          animation: typing 3.5s steps(44, end), blink-caret .75s step-end infinite, slidein 1s ease 3.5s forwards;
+          animation-delay: 10s;
+        }
+      
       
       
       /* The typing effect */
@@ -91,3 +107,42 @@ html{
       50% { border-color: rgba(255,255,255,.75)}
     }
   
+    /* INTRO PAGE BUTTONS - PLAY OR DO NOT PLAY OPTIONS */
+
+    button.playGame , button.abortGame {
+      display:inline-block;
+      justify-content: center;
+      padding:0.35em 1.2em;
+      border:0.1em solid rgba(255,255,255,.75);
+      margin:0 0.3em 0.3em 0;
+      border-radius:0.12em;
+      box-sizing: border-box;
+      text-decoration:none;
+      font-family:'Anonymous Pro', monospace; 
+     /*  font-weight:300; */
+     color:#acacac;
+     text-align:center;
+     transition: all 0.2s;
+      }
+      button.playGame:hover , button.abortGame:hover {
+        color:#000000;
+        background-color:#FFFFFF;
+        cursor: pointer;
+      }
+
+      /* Button bounce animation */
+      /* bounce effect learnt from https://fdossena.com/?p=html5cool/buttons/i.frag */
+      /* FIXME: Need to center buttons below typewriter txt */
+      .bounceAnim{
+        animation:bouncy 3.5s infinite linear;
+        position:relative;
+        }
+        @keyframes bouncy {
+          0%{top:0em} /* begin bounce */
+          40%{top:0em}
+          43%{top:-0.9em}
+          46%{top:0em} /* mid bounce */
+          48%{top:-0.4em}
+          50%{top:0em}
+          100%{top:0em;} /* end bounce */
+        }
