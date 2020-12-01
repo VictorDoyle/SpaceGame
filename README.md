@@ -21,7 +21,7 @@ Project Zero -- Space Game: The Insanity Descent is a time based browser experie
 
 1. Step One: Introduction of the Game Interface: 
 ![SpaceGameIntroduction](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/wireframe/stepOneSpaceGame.png)
-
+![SpaceGameIntroduction2](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/wireframe/stepTwoSpaceGame.png)
 
 ## User Story
 1. User arrives at blank browser page with dark background color. After 1second, blank page is filled with animated text in "computer typing" style that presents User with Main Narrative Introduction (The basic backstory and explanation of what is to unfold. Who is the character, what has to happen and what will happen).
