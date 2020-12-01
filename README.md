@@ -30,6 +30,10 @@ User will read the instructions and get acquainted with interface. User will hav
 3. Step Three: User acknowledges Instructions: Sleepiness can be Decreased by Sleeping, Boredom can be decreased by analyzing the environment, or dancing, or exercising. Hunger can be decreased by Eating Food Rations stored inside the Astronaut's spaceship. Each choice will show a windowed log within the Dialogue Box.
 The user will watch the Astronaut grow older by the minute, and see the Astronaut's hunger, boredom and sleep levels change. The user will be prompted by the Dialogue Box when to feed the Astronaut, make him sleep or make him lose his boredom. 
 If the user does not interact enough with the Astronaut, and either of the three levels increase over the set limit. The Astronaut will die and the user will be presented with a new "Character Dead" screen. 
+4. The Final End Game Possibilities:
+If during Step One, the user chose NOT to play the game, Step 2 & 3 are skipped and the user immediately sees End Game Option B (below). 
+If the User Plays the Game but does not help the astronaut in time and lets limits of hunger,sleep,boredom accumulate. End Game Option A will fill screen.
+![SpaceGameIntroduction3](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/wireframe/endGameWindows.png)
 
 ## Resources
 1. Seperated Resources into Files. Media containing all images,sounds,icons.
