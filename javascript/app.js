@@ -1,12 +1,16 @@
 console.log("Insanity Check?")
 
-/* ANIMATION TO SLIDE ELEMENTS LEFT OFF PAGE WHEN BUTTON CLICKED*/
+/* ANIMATION TO FADE OUT WHEN PLAY BUTTON CLICKED*/
 
-function slideLeft() {
-    document.getElementById("introduction");
-  }
-/* ANIMATION TO SLIDE ELEMENTS RIGHT OFF PAGE WHEN USER CHOOSES DONT PLAY GAME*/
+$(".playGame").on("click", function fadeOutofScreen(){
+    $("div .partOne").fadeOut(1000)
+}
+)
 
-  function slideLeft() {
-    document.getElementById("introduction");
-  }
+
+/* ANIMATION TO FADE OUT WHEN NO DONT PLAY BUTTON CLICKED*/
+
+$(".abortGame").on("click", function fadeOutofScreen(){
+    $("div .partOne").fadeOut(1000)
+}
+)
