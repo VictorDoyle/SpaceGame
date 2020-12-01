@@ -2,7 +2,7 @@
 
 # Project Zero -- Space Game: The Insanity Descent 
 
-![SpaceGameMainIntro](/Users/victordoyle/Desktop/SEI/SpaceGame/media/images/InsanityDescent-SpaceGame.jpg)
+![SpaceGameMainIntro](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/images/InsanityDescent-SpaceGame.jpg?raw=true)
 
 ## Wireframes/Project Outline
 
@@ -14,8 +14,7 @@ Project Zero -- Space Game: The Insanity Descent is a time based browser experie
 
 ## Main Narrative
 
-1. You will be writing your answers inside the `app.js` file located in the folder from this repo: `lotr_homework/js/app.js`
-2. Open the `index.html` file in your browser to test your work. It is located at: `lotr_homework/index.html`
+1. His spaceship has no fuel, he had a hard landing and suffered a blunt trauma to the head. Can’t remember how he got there or what his mission is, but he just needs to survive.
 
 ## User Story
 1. User arrives at blank browser page with dark background color. After 1second, blank page is filled with animated text in "computer typing" style that presents User with Main Narrative Introduction (The basic backstory and explanation of what is to unfold. Who is the character, what has to happen and what will happen).
