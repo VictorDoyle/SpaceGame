@@ -25,6 +25,8 @@ html{
     color: rgba(255,255,255,.75);
     font-family: 'Anonymous Pro', monospace;  
     background-color: rgb(25,25,25);  
+    /* OVERFLOW X HIDDEN SO I CAN TRANSLATE OFF PAGE */
+    overflow-x: hidden;
   }
   
   .typewriter1 p {
@@ -107,22 +109,31 @@ html{
       50% { border-color: rgba(255,255,255,.75)}
     }
   
-    /* INTRO PAGE BUTTONS - PLAY OR DO NOT PLAY OPTIONS */
+    /* INTRO PAGE BUTTONS - PLAY OR DO NOT PLAY OPTIONS */  /* FIXME: Need to center buttons below typewriter txt */
+    
+
+.intro-buttons {
+  margin-top: 5%;
+ 
+  padding-top: 20%; 
+}
 
     button.playGame , button.abortGame {
-      display:inline-block;
-      justify-content: center;
-      padding:0.35em 1.2em;
+      position: relative;
+      /* Larger Button Design for MVP */
+       width: 42px; height: 42px;
+      /* Code below is basic visuals for button */
+      display: inline-block;
+      justify-content: center; 
       border:0.1em solid rgba(255,255,255,.75);
-      margin:0 0.3em 0.3em 0;
+      /* keep width high for MVP visual */
+      width: 30%;
       border-radius:0.12em;
-      box-sizing: border-box;
       text-decoration:none;
       font-family:'Anonymous Pro', monospace; 
-     /*  font-weight:300; */
-     color:#acacac;
-     text-align:center;
-     transition: all 0.2s;
+      color:#acacac;
+      text-align:center;
+      transition: all 0.2s;
       }
       button.playGame:hover , button.abortGame:hover {
         color:#000000;
@@ -132,7 +143,7 @@ html{
 
       /* Button bounce animation */
       /* bounce effect learnt from https://fdossena.com/?p=html5cool/buttons/i.frag */
-      /* FIXME: Need to center buttons below typewriter txt */
+    
       .bounceAnim{
         animation:bouncy 3.5s infinite linear;
         position:relative;
@@ -146,3 +157,5 @@ html{
           50%{top:0em}
           100%{top:0em;} /* end bounce */
         }
+
+
