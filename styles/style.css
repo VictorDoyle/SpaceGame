@@ -10,7 +10,7 @@
 
 /* SECTION 1 -- INTRO PAGE + ANIMATION */
 /* Debut of Narrative - AI greets user story point. */
-/* Code help from Stackoverflow https://stackoverflow.com/questions/57982722/make-blinking-cursor-disappear-at-end-of-css-animation */
+/* Animation Code help from Stackoverflow https://stackoverflow.com/questions/57982722/make-blinking-cursor-disappear-at-end-of-css-animation */
 
 
 
@@ -109,7 +109,7 @@ html{
       50% { border-color: rgba(255,255,255,.75)}
     }
   
-    /* INTRO PAGE BUTTONS - PLAY OR DO NOT PLAY OPTIONS */  /* FIXME: Need to center buttons below typewriter txt */
+    /* INTRO PAGE BUTTONS - PLAY OR DO NOT PLAY OPTIONS */  
     
 
 .intro-buttons {
@@ -120,15 +120,13 @@ html{
 
     button.playGame , button.abortGame {
       position: relative;
-      /* Larger Button Design for MVP */
        width: 42px; height: 42px;
-      /* Code below is basic visuals for button */
       display: inline-block;
       justify-content: center; 
       border:0.1em solid rgba(255,255,255,.75);
-      /* keep width high for MVP visual */
+      margin-left: 12.5%;
       width: 30%;
-      border-radius:0.12em;
+      border-radius:0.12em; /* round up button */
       text-decoration:none;
       font-family:'Anonymous Pro', monospace; 
       color:#acacac;
@@ -158,4 +156,11 @@ html{
           100%{top:0em;} /* end bounce */
         }
 
+        /* USER CHOOSES 'DO NOT PLAY' */
+  img.evilHal {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
 
