@@ -10,7 +10,8 @@ $(".partThree").hide();
 $(".playGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(1000);
     $(".partTwo").show();
-    $(".evilHal").fadeIn(1000);
+    $(".astronaut img").fadeIn(1000);
+
     
 }
 )
@@ -21,7 +22,7 @@ $(".playGame").on("click", function fadeOutofScreen(){
 $(".abortGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(500);               // FIXME: fix fadeout animation
    $(".earlyQuitter").show();
-   $(".astronaut").fadeIn(1000);      //FIXME: Animation wont work
+   $("div .evilHal img").fadeIn(1000);      //FIXME: Animation wont work
 
 }
 )
@@ -29,3 +30,4 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 
 /* GAME RULES/BASICS JAVASCRIPT */
 
+/* Input + Button for character name submission */
