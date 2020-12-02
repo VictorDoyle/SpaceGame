@@ -62,32 +62,6 @@ $submitButton.on("click", function logPlayerName(){
 
 
 
-/*SECTION:  PLAYER BASICS */
-
-class Player {
-    constructor(givenName) {
-      // default props
-      this.hungerLevel = 0;
-      this.sleepLevel = 0;
-      this.boredLevel = 0;
-      // assigned props
-      this.name = givenName;
-      
-    }
-    getHungry() {
-      console.log("I'm feeling hungry, maybe it's time for a snack?");
-    }
-    getBored() {
-    console.log("I am feeling an existential crisis coming soon. I need something to do...");
-  }
-    getSleepy() {
-    console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
-  }
-  }
-
-  const firstAstronaut = new Player(""); /* Have to link .value from input to become new Player (input.value)*/
-
-
 
   /* SECTION: User Interface Major Elements */
   /* TODO: AFTER MVP */
@@ -104,6 +78,7 @@ const sleepTimer = function sleepTimer() {
     console.log("Every 50 seconds, character's sleep level increases by 1", sleepCount);
     $("#sleepTimer").text(`Sleep Level: ${sleepCount}.`);
     sleepCount++;
+    firstAstronaut.sleepLevel++;
     if(sleepCount >= 10){
         clearInterval(timer);
         console.log("Your Astronaut died of exhaustion. Who knew life was so exhausting?")
@@ -123,6 +98,7 @@ const foodTimer = function foodTimer() {
     console.log("Every 50 seconds, character's hunger level increases by 1", foodCount);
     $("#foodTimer").text(`Hunger Level: ${foodCount}.`);
     foodCount++;
+    firstAstronaut.hungerLevel++;
     if(foodCount >= 10){
         clearInterval(timer);
         console.log("Your Astronaut died of hunger. Those snacks could have really helped. Not anymore.")
@@ -142,6 +118,7 @@ const boredTimer = function boredTimer() {
     console.log("Every 30 seconds, character's boredom level increases by 1", boredCount);
     $("#boredTimer").text(`Boredom Level: ${boredCount}.`);
     boredCount++;
+    firstAstronaut.boredLevel++;
     if(boredCount >= 10){
         clearInterval(timer);
         console.log("Your Astronaut died of an existential crisis. Memories of Nietzsche could not help you now.")
@@ -160,6 +137,7 @@ $(".sleepBox").on("click", function playerSleep(){
     $(".astronaut img").fadeOut(1000);
     /* astronaut new image sleeping .fadeIn(1000) */
     sleepCount--;
+    firstAstronaut.sleepLevel--;
 }
 )
 
@@ -168,6 +146,7 @@ $(".boredomBox").on("click", function playerFun(){
     $(".astronaut img").fadeOut(1000);
     $(".astronautFun img").fadeIn(1000);
     boredCount--;
+    firstAstronaut.boredLevel--;
     
 }
 )
@@ -180,6 +159,7 @@ $(".foodBox").on("click", function playerEat(){
     
     /* astronaut new image doing exercise etc .fadeIn(1000) */
     foodCount--;
+    firstAstronaut.hungerLevel--;
     
 }
 )
@@ -210,3 +190,29 @@ const setTimer = function setTimer() {
 };
 
 
+
+
+/*SECTION:  PLAYER BASICS */
+
+class Player {
+    constructor(givenName) {
+      // default props
+      this.hungerLevel = foodCount;
+      this.sleepLevel = sleepCount;
+      this.boredLevel = boredCount;
+      // assigned props
+      this.name = givenName;
+      
+    }
+    getHungry() {
+      console.log("I'm feeling hungry, maybe it's time for a snack?");
+    }
+    getBored() {
+    console.log("I am feeling an existential crisis coming soon. I need something to do...");
+  }
+    getSleepy() {
+    console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
+  }
+  }
+
+  const firstAstronaut = new Player(""); /* Have to link .value from input to become new Player (input.value)*/
