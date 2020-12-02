@@ -169,8 +169,23 @@ html{
     margin-left: 35%;
     margin-top: 15%;
     z-index: 10;
+    animation:spaceBounce 3s infinite linear;
+        position:relative;
+        } /* Floating animation style for astronaut */
+        @keyframes spaceBounce {
+          0%{top:0em} /* begin bounce */
+          20%{top:0em}
+          40%{top:-0.5em}
+          45%{top:-0.75em}
+          50%{top:-1em}
+          55%{top:-0.75em}
+          60%{top:-0.5em}
+          80%{top:0em}
+          100%{top:0em}
+           /* end bounce */
+        }
     
-  }
+  
 
           /* USER CHOOSES TO PLAY GAME */
 
