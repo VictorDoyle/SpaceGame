@@ -28,7 +28,9 @@ html{
     /* OVERFLOW X HIDDEN SO I CAN TRANSLATE OFF PAGE */
     overflow-x: hidden;
   }
-  
+
+  /* Element Styles */
+
   .typewriter1 p {
       overflow: hidden;
       border-right: 2px solid transparent;
@@ -186,10 +188,7 @@ html{
         }
     
   
-
-          /* USER CHOOSES TO PLAY GAME */
-
-
+/* SECTION 2 -- USER PLAY PAGE + USER INTERFACE ELEMENTS + ANIMATION  */
   /* USER INTERFACE ELEMENTS */
 
   /* DIALOGUE BOX */
@@ -205,5 +204,62 @@ html{
     z-index: 20;
   
   }
+
+  /* Setting Food/Sleep/Bored Icons on far Right with contained div style */
+
+  .uiElements {
+    flex-grow: 3;
+    align-content: right;
+  }
+
+/* Icons for Sleep */
+/* <div class="sleepBox"> */
+.sleepBox {
+  background: white;
+  display: block;
+  position: absolute;
+  top: 25vh;
+  right: 35px;
+  flex-grow: 1;
+  margin: 1px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 25;
+}
+
+/* Icons for Food */
+/* <div class="foodBox"> */
+
+.foodBox {
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50vh;
+  right: 35px;
+  flex-grow: 1;
+  margin: 1px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 25;
+}
+
+/* Icons for Boredom */
+/* <div class="boredomBox"> */
+.boredomBox {
+  background: white;
+  display: block;
+  position: absolute;
+  bottom: 15vh;
+  right: 35px;
+  flex-grow: 1;
+  margin: 1px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 25;
+}
+  
 
 

@@ -77,3 +77,15 @@ class Player {
   }
 
   const firstAstronaut = new Player(""); /* Have to link .value from input to become new Player (input.value)*/
+
+
+/*   Icons for Sleep  */
+
+
+/* TODO: AFTER MVP */
+/* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
+
+ /*  Icons for Food */
+
+
+/*   Icons for Boredom  */
