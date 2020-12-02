@@ -205,14 +205,15 @@ html{
 
         .astronautFun {
           display: flex;
+          justify-content: left ;
           margin-left: 40%;
-          margin-top: 15%;
           z-index: 15;
           animation:spaceFunLeft 4s linear infinite;
           
               position:relative;
               } /* explore left animation style for astronaut */
               @keyframes spaceFunLeft {
+                
                 0%{left:0em} /* begin slide */
                 20%{left:0em}
                 40%{left:-0.5em}
@@ -225,6 +226,15 @@ html{
                  /* end slide left */
                  /* flip and restart bounce with right side below */
               }
+              
+              .astronaut {
+                display: flex;
+                margin-left: 40%;
+                margin-top: 15%;
+                z-index: 10;
+                animation:spaceBounce 3s infinite linear;
+                    position:relative;
+               }
             
     
   
@@ -336,25 +346,6 @@ html{
 
 }
 
-/* fix background color with gradients*/ /* NOTE: Unimportant now -- change after MVP */
 
-/* .btn-grad {background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%)}
-.btn-grad {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
- } 
-  .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here 
-   color: #fff;
-   text-decoration: none;
- } */
 
 
