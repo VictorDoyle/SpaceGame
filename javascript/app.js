@@ -32,17 +32,26 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 
 /* Input + Button for character name submission */
 
-const $submitButton =  $("button.submitButton") 
+const $submitButton =  $("button.submitButton");
 
 /* Initialize Name Submission with Button Click - Store value and return it in Player class */
 $submitButton.on("click", function logPlayerName(){
-    $("p.dialogueBox").fadeOut(1000);
-    let player = document.getElementById('astronautName');
-    let playerName = player.value;
-   console.log(playerName);
+    $("p #speechOptionOne").fadeOut(1000); /* fadeout old dialogue for new one */
+
+    let $playerName = document.getElementById('astronautName').value;
+    const $dialogueAddOn = $(".dialogueBox")
+    console.log(`nice to meet you ${$playerName}`);
+    
+    /* $playerName now has to create a new .dialogueBox <p> with the text saying Hello */ 
+   /*  <p> Hello ${$playername}... That's an interesting temporary name. Anyway, let's get down to survival. */
+
+   $("p #speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
+
 
 }
 )
+/* store User Input of Button in const below. This will be reused inside Player class for giving name */
+
 
 
 
@@ -58,15 +67,12 @@ class Player {
       this.name = givenName;
       
     }
-  ​
     getHungry() {
       console.log("I'm feeling hungry, maybe it's time for a snack?");
     }
-    
     getBored() {
     console.log("I am feeling an existential crisis coming soon. I need something to do...");
   }
-    
     getSleepy() {
     console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
   }
