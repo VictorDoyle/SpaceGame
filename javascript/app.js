@@ -99,7 +99,7 @@ class Player {
 
 /* AGE BAR */
 
-let time = 120;
+let time = 1;
 
 const setTimer = function setTimer() {
   
@@ -107,7 +107,10 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
+    /* add clearInterval if Player dies */
+   /*  if (player.hungerLevel === 0 || player.boredLevel === 0 || player.sleepLevel === 0) { //FIXME: Revisit use of || not the best here
+        clearInterval(timer); */
     
   };
-  const timer = setInterval(updateTime, 1000);
+  const timer = setInterval(updateTime, 60 * 1000);
 };
