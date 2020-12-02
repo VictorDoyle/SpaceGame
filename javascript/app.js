@@ -9,7 +9,7 @@ $(".partThree").hide();
 
 $(".playGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(1000);
-    $(".partTwo").show();
+    $(".partTwo").show();       /* FIXME: Make smoother animation FadeIn for Part Two */
     $(".astronaut img").fadeIn(1000);
 
     
@@ -44,6 +44,8 @@ $submitButton.on("click", function logPlayerName(){
     $('.nameBox').hide();
     /* Once player initializes game by inputing name. Start timer! */
     setTimer();
+    sleepTimer();
+    foodTimer();
   
         /* FIXME: URGENT -- NEED TO STOP THIS EVENT LISTENER ONCE CLICKED. SINGULAR ACTION ONE TIME USE ONLY  */
 }
@@ -81,16 +83,66 @@ class Player {
   const firstAstronaut = new Player(""); /* Have to link .value from input to become new Player (input.value)*/
 
 
-/*   Icons for Sleep  */
 
-
-/* TODO: AFTER MVP */
+  /* SECTION: User Interface Major Elements */
+  /* TODO: AFTER MVP */
 /* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
 
- /*  Icons for Food */
 
+/*   Icons for Sleep  */
+ let sleepCount = 1;
+
+const sleepTimer = function sleepTimer() {
+  
+  const updateSleepTime = function updateSleepTime() {
+    console.log("Every 50 seconds, character's sleep level increases by 1", sleepCount);
+    $("#sleepTimer").text(`Sleep Level: ${sleepCount}.`);
+    sleepCount++;
+    /* if (sleepCount >= 10) {
+        clearInterval(timer); */ 
+        /* make timer stop at 10 */
+        /* add something here to call a function that will print Player died in his sleep */
+   
+  };
+  const timer = setInterval(updateSleepTime, 50 * 1000);  
+}; 
+
+
+ /*  Icons for Food */
+ let foodCount = 1;
+
+const foodTimer = function foodTimer() {
+  
+  const updateFoodTime = function updateFoodTime() {
+    console.log("Every 50 seconds, character's hunger level increases by 1", foodCount);
+    $("#foodTimer").text(`Hunger Level: ${foodCount}.`);
+    foodCount++;
+    /* if (foodCount >= 10) {
+        clearInterval(timer); */ 
+        /* make timer stop at 10 */
+        /* add something here to call a function that will print Player died of hunger */
+   
+  };
+  const timer = setInterval(updateFoodTime, 50 * 1000);  
+}; 
 
 /*   Icons for Boredom  */
+let boredCount = 1;
+
+const boredTimer = function boredTimer() {
+  
+  const updateBoredTime = function updateBoredTime() {
+    console.log("Every 30 seconds, character's boredom level increases by 1", boredCount);
+    $("#boredTimer").text(`Boredom Level: ${boredCount}.`);
+    boredCount++;
+    /* if (boredCount >= 10) {
+        clearInterval(timer); */ 
+        /* make timer stop at 10 */
+        /* add something here to call a function that will print Player died of existential crisis overload */
+   
+  };
+  const timer = setInterval(updateBoredTime, 30 * 1000);  
+}; 
 
 
 
@@ -112,5 +164,7 @@ const setTimer = function setTimer() {
         clearInterval(timer); */
     
   };
-  const timer = setInterval(updateTime, 60 * 1000);
+  const timer = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
 };
+
+
