@@ -30,6 +30,9 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 
 /* SECTION: GAME RULES/BASICS JAVASCRIPT */
 
+/* HIDE OTHER ASTRONAUT ANIMATIONS WHILE PLAYING MAIN GAME. ONLY INITIALIZE SHOW() AFTER BUTTONS CLICKED */
+$(".astronautFun img").hide();
+
 /* Input + Button for character name submission */
 
 const $submitButton =  $("button.submitButton");
@@ -107,7 +110,7 @@ const sleepTimer = function sleepTimer() {
       }
    
   };
-  const timer = setInterval(updateSleepTime, 50 * 1000);  
+  const timer = setInterval(updateSleepTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -127,7 +130,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  const timer = setInterval(updateFoodTime, 50 * 1000);  
+  const timer = setInterval(updateFoodTime, 20 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -146,7 +149,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  const timer = setInterval(updateBoredTime, 30 * 1000);  
+  const timer = setInterval(updateBoredTime, 10 * 1000);   /* FIXME: Change values back to 30 after testing */
 }; 
 
 
