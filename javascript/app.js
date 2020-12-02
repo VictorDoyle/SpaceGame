@@ -87,6 +87,7 @@ class Player {
   /* SECTION: User Interface Major Elements */
   /* TODO: AFTER MVP */
 /* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
+/* FIXME: AFTER MVP -- Refactor Timer into 1 single timer, with sub functions/if else statements that allow for logging Sleep/Food/Bored in ONE timer*/
 
 
 /*   Icons for Sleep  */
@@ -98,9 +99,9 @@ const sleepTimer = function sleepTimer() {
     console.log("Every 50 seconds, character's sleep level increases by 1", sleepCount);
     $("#sleepTimer").text(`Sleep Level: ${sleepCount}.`);
     sleepCount++;
-    /* if (sleepCount >= 10) {
-        clearInterval(timer); */ 
-        /* make timer stop at 10 */
+    if(sleepCount >= 10){
+        clearInterval(timer);
+      }
         /* add something here to call a function that will print Player died in his sleep */
    
   };
