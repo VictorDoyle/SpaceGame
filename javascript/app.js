@@ -46,8 +46,10 @@ $submitButton.on("click", function logPlayerName(){
     setTimer();
     sleepTimer();
     foodTimer();
+    boredTimer();
   
         /* FIXME: URGENT -- NEED TO STOP THIS EVENT LISTENER ONCE CLICKED. SINGULAR ACTION ONE TIME USE ONLY  */
+        /* TODO: AFTER MVP --- Need to refactor this terrible looking code */
 }
 )
 
@@ -89,8 +91,8 @@ class Player {
 /* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
 /* FIXME: AFTER MVP -- Refactor Timer into 1 single timer, with sub functions/if else statements that allow for logging Sleep/Food/Bored in ONE timer*/
 
-
-/*   Icons for Sleep  */
+/*             TIMERS                */
+/*   Timer for Sleep  */
  let sleepCount = 1;
 
 const sleepTimer = function sleepTimer() {
@@ -101,15 +103,15 @@ const sleepTimer = function sleepTimer() {
     sleepCount++;
     if(sleepCount >= 10){
         clearInterval(timer);
+        console.log("Your Astronaut died of exhaustion. Who knew life was so exhausting?")
       }
-        /* add something here to call a function that will print Player died in his sleep */
    
   };
   const timer = setInterval(updateSleepTime, 50 * 1000);  
 }; 
 
 
- /*  Icons for Food */
+ /*  Timer for Food */
  let foodCount = 1;
 
 const foodTimer = function foodTimer() {
@@ -120,14 +122,15 @@ const foodTimer = function foodTimer() {
     foodCount++;
     if(foodCount >= 10){
         clearInterval(timer);
+        console.log("Your Astronaut died of hunger. Those snacks could have really helped. Not anymore.")
       }
-        /* add something here to call a function that will print Player died of hunger */
+        
    
   };
   const timer = setInterval(updateFoodTime, 50 * 1000);  
 }; 
 
-/*   Icons for Boredom  */
+/*   Timer for Boredom  */
 let boredCount = 1;
 
 const boredTimer = function boredTimer() {
@@ -138,13 +141,44 @@ const boredTimer = function boredTimer() {
     boredCount++;
     if(boredCount >= 10){
         clearInterval(timer);
+        console.log("Your Astronaut died of an existential crisis. Memories of Nietzsche could not help you now.")
       }
-        /* add something here to call a function that will print Player died of existential crisis overload */
+       
    
   };
-  const timer = setInterval(updateBoredTime, 30000);  
+  const timer = setInterval(updateBoredTime, 30 * 1000);  
 }; 
 
+
+/*             BUTTON CLICK EVENT LISTENERS FOR USER ELEMENT ICONS                */
+
+/*   Event Click for Sleep  */
+$(".sleepBox").on("click", function playerSleep(){     
+    $(".astronaut img").fadeOut(1000);
+    /* astronaut new image sleeping .fadeIn(1000) */
+    sleepCount--;
+}
+)
+
+/*   Event Click for Boredom  */
+$(".boredomBox").on("click", function playerFun(){     
+    $(".astronaut img").fadeOut(1000);
+    /* astronaut new image doing exercise etc .fadeIn(1000) */
+    boredCount--;
+    
+}
+)
+
+
+/*   Event Click for Food  */
+
+$(".foodBox").on("click", function playerEat(){     
+    $(".astronaut img").fadeOut(1000);
+    /* astronaut new image doing exercise etc .fadeIn(1000) */
+    foodCount--;
+    
+}
+)
 
 
 
@@ -160,7 +194,7 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
-    if(boredCount >= 10 , foodCount >= 10 ,sleepCount >= 10 ){
+    if(boredCount >= 10 , foodCount >= 10 ,sleepCount >= 10 ){  /* FIXME: */
         clearInterval(timer);
       }
     /* add clearInterval if Player dies */

@@ -238,13 +238,19 @@ html{
 /* Icons for Sleep */
 /* <div class="sleepBox"> */
 .sleepBox {
-  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%);;
+  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%);
   text-align: center;
   margin: 30px;
   border-radius: 50%;
+  cursor: pointer;      /* attach event listener HERE */
   width: 200px;
   height: 200px;
   z-index: 25;
+}
+
+.sleepBox:hover {
+  opacity: 95%;
+  box-shadow: 0 0 15px whitesmoke;
 }
 
 /* Icons for Food */
@@ -255,9 +261,15 @@ html{
   margin: 30px;
   text-align: center;
   border-radius: 50%;
+  cursor: pointer;      /* attach event listener HERE */
   width: 200px;
   height: 200px;
   z-index: 25;
+}
+
+.foodBox:hover {
+  opacity: 95%;
+  box-shadow: 0 0 15px whitesmoke;
 }
 
 /* Icons for Boredom */
@@ -265,11 +277,17 @@ html{
 .boredomBox {
   background: linear-gradient(360deg, #FC466B 0%, #3F5EFB 100%);
   margin: 30px;
+  cursor: pointer;      /* attach event listener HERE */
   text-align: center;
   border-radius: 50%;
   width: 200px;
   height: 200px;
   z-index: 25;
+}
+
+.boredomBox:hover {
+  opacity: 95%;
+  box-shadow: 0 0 15px whitesmoke;
 }
   
 
