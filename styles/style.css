@@ -20,7 +20,8 @@ html{
     overflow: hidden;
   }
   body{
-    height: calc(100vh - 8em);
+    min-height: 100%;
+   /*  height: calc(100vh - 8em); */
     padding: 4em;
     color: rgba(255,255,255,.75);
     font-family: 'Anonymous Pro', monospace;  
@@ -195,7 +196,11 @@ html{
 
   .dialogueBox {        /* FIXME: Need to Center Left dialogue box + center on X axis */
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    float: left;
     left: 10px;
+    bottom: 30vh;
     background-color: rgb(53, 53, 53);
     width: 200px;
     border: 5px solid rgb(89, 89, 89);
@@ -208,18 +213,20 @@ html{
   /* Setting Food/Sleep/Bored Icons on far Right with contained div style */
 
   .uiElements {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    right: 35px;
+    right: -10px;
+    bottom: 15vh;
+
   }
 
 /* Icons for Sleep */
 /* <div class="sleepBox"> */
 .sleepBox {
   background: white;
-  top: 25vh;
-  margin: 1px;
+  margin: 30px;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -231,8 +238,7 @@ html{
 
 .foodBox {
   background: white;
-  top: 50vh;
-  margin: 1px;
+  margin: 30px;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -243,8 +249,7 @@ html{
 /* <div class="boredomBox"> */
 .boredomBox {
   background: white;
-  bottom: 5vh;
-  margin: 1px;
+  margin: 30px;
   border-radius: 50%;
   width: 200px;
   height: 200px;
