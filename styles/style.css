@@ -157,10 +157,38 @@ html{
         }
 
         /* USER CHOOSES 'DO NOT PLAY' */
-  img.evilHal {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+  .evilHal {
+    display: flex;
+    margin-left: 35%;
+    margin-top: 15%;
 
   }
+
+  .astronaut {
+    display: flex;
+    margin-left: 35%;
+    margin-top: 15%;
+    z-index: 10;
+    
+  }
+
+          /* USER CHOOSES TO PLAY GAME */
+
+
+  /* USER INTERFACE ELEMENTS */
+
+  /* DIALOGUE BOX */
+
+  .dialogueBox {        /* FIXME: Need to Center Left dialogue box + center on X axis */
+    position: absolute;
+    left: 10px;
+    background-color: rgb(53, 53, 53);
+    width: 200px;
+    border: 5px solid rgb(89, 89, 89);
+    padding: 40px; /* keeps box nicely sized */
+    margin: 20px;
+    z-index: 20;
+  
+  }
+
 
