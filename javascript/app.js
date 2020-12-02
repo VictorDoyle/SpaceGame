@@ -118,9 +118,9 @@ const foodTimer = function foodTimer() {
     console.log("Every 50 seconds, character's hunger level increases by 1", foodCount);
     $("#foodTimer").text(`Hunger Level: ${foodCount}.`);
     foodCount++;
-    /* if (foodCount >= 10) {
-        clearInterval(timer); */ 
-        /* make timer stop at 10 */
+    if(foodCount >= 10){
+        clearInterval(timer);
+      }
         /* add something here to call a function that will print Player died of hunger */
    
   };
@@ -136,13 +136,13 @@ const boredTimer = function boredTimer() {
     console.log("Every 30 seconds, character's boredom level increases by 1", boredCount);
     $("#boredTimer").text(`Boredom Level: ${boredCount}.`);
     boredCount++;
-    /* if (boredCount >= 10) {
-        clearInterval(timer); */ 
-        /* make timer stop at 10 */
+    if(boredCount >= 10){
+        clearInterval(timer);
+      }
         /* add something here to call a function that will print Player died of existential crisis overload */
    
   };
-  const timer = setInterval(updateBoredTime, 30 * 1000);  
+  const timer = setInterval(updateBoredTime, 30000);  
 }; 
 
 
@@ -160,6 +160,9 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
+    if(boredCount >= 10 , foodCount >= 10 ,sleepCount >= 10 ){
+        clearInterval(timer);
+      }
     /* add clearInterval if Player dies */
    /*  if (player.hungerLevel === 0 || player.boredLevel === 0 || player.sleepLevel === 0) { //FIXME: Revisit use of || not the best here
         clearInterval(timer); */
