@@ -47,13 +47,14 @@ $submitButton.on("click", function logPlayerName(){
 
     $("#speechOptionOne").fadeOut(1000); /* fadeout old dialogue for new one */
     $playerName = document.getElementById('astronautName').value;
+    firstAstronaut = new Player()
 
     /* NOTE: New dialogue options coming after interaction */
-    const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${$playerName}... That's an interesting temporary name. Anyway, let's get down to survival.</p>`)
+    const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${firstAstronaut.name}... That's an interesting temporary name. Anyway, let's get down to survival.</p>`)
     $('.dialogueBox').append($speechOptionTwo);
     $("#speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
     $('.nameBox').hide();
-    firstAstronaut = new Player()
+    
 
     /* Once player initializes game by inputing name. Start timer! */
     setTimer();
@@ -89,11 +90,15 @@ const sleepTimer = function sleepTimer() {
     firstAstronaut.sleepLevel++;
     if(sleepCount >= 10){
         clearInterval(timer);
-        console.log("Your Astronaut died of exhaustion. Who knew life was so exhausting?")
+        const $deathDialogue1 = $(`<p id="deathDialogue1"> ${firstAstronaut.name}... You died of exhaustion... Who knew life was so exhausting?</p>`)
+    $('.dialogueBox').append($deathDialogue1);
+    $("#speechOptionTwo").fadeOut(1000);
+    $("#deathDialogue1").fadeIn(1000); 
+    /* add fadeIn image of dead Astronaut FIXME: */ 
       }
    
   };
-  const timer = setInterval(updateSleepTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
+  const timer = setInterval(updateSleepTime, 50 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -108,12 +113,16 @@ const foodTimer = function foodTimer() {
     firstAstronaut.hungerLevel++;
     if(foodCount >= 10){
         clearInterval(timer);
-        console.log("Your Astronaut died of hunger. Those snacks could have really helped. Not anymore.")
+        const $deathDialogue2 = $(`<p id="deathDialogue2"> ${firstAstronaut.name}... Did you forget about all those snacks you have? They could have really helped. Not anymore!</p>`)
+        $('.dialogueBox').append($deathDialogue2);
+        $("#speechOptionTwo").fadeOut(1000);
+        $("#deathDialogue2").fadeIn(1000); 
+        /* add fadeIn image of dead Astronaut FIXME: */ 
       }
         
    
   };
-  const timer = setInterval(updateFoodTime, 20 * 1000);   /* FIXME: Change values back to 50 after testing */
+  const timer = setInterval(updateFoodTime, 2 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -127,7 +136,11 @@ const boredTimer = function boredTimer() {
     firstAstronaut.boredLevel++;
     if(boredCount >= 10){
         clearInterval(timer);
-        console.log("Your Astronaut died of an existential crisis. Memories of Nietzsche could not help you now.")
+        const $deathDialogue3 = $(`<p id="deathDialogue3"> ${firstAstronaut.name}. I know existence can seem futile, but dying of an existential crisis while abroad seems questionable... Your memories of Nietzsche cannot help you now</p>`)
+        $('.dialogueBox').append($deathDialogue3);
+        $("#speechOptionTwo").fadeOut(1000);
+        $("#deathDialogue3").fadeIn(1000); 
+        /* add fadeIn image of dead Astronaut FIXME: */ 
       }
        
    
