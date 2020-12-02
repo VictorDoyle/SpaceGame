@@ -169,7 +169,7 @@ html{
 
   .astronaut {
     display: flex;
-    margin-left: 35%;
+    margin-left: 40%;
     margin-top: 15%;
     z-index: 10;
     animation:spaceBounce 3s infinite linear;
@@ -194,7 +194,7 @@ html{
 
   /* DIALOGUE BOX */
 
-  .dialogueBox {        /* FIXME: Need to Center Left dialogue box + center on X axis */
+  .dialogueBox {        
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -212,13 +212,13 @@ html{
 
   /* Setting Food/Sleep/Bored Icons on far Right with contained div style */
 
-  .uiElements {
+  .uiElements {           /* FIXME: Need to update position:absolute so display works on different @media screen sizes */
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     right: -10px;
-    bottom: 15vh;
+    bottom: 10vh;
 
   }
 
@@ -256,5 +256,45 @@ html{
   z-index: 25;
 }
   
+
+/* MINOR USER INTERFACE ELEMENTS // AGE BAR */
+
+.ageBar {             /* FIXME: Need to fix absolute positioning. looks horrible */
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  bottom: 0px;
+  left: 40%;
+  right: auto;
+  background-color: rgba(53,53,53,1);
+  width: 200px;
+  border: 5px solid rgb(89, 89, 89);
+  padding: 40px; /* keeps box nicely sized */
+  margin: 20px;
+  z-index: 25;
+
+}
+
+/* fix background color with gradients*/ /* NOTE: Unimportant now -- change after MVP */
+
+/* .btn-grad {background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ } 
+  .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here 
+   color: #fff;
+   text-decoration: none;
+ } */
 
 

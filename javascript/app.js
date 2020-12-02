@@ -1,4 +1,4 @@
-
+/*SECTION: BASE ANIMATIONS & JS FOR INTRO TO GAME */
 
 /* LATER GAME SEQUENCES AND SCREENS HAVE TO BEGIN AT HIDDEN */
 $(".earlyQuitter").hide();
@@ -28,7 +28,7 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 )
 
 
-/* GAME RULES/BASICS JAVASCRIPT */
+/* SECTION: GAME RULES/BASICS JAVASCRIPT */
 
 /* Input + Button for character name submission */
 
@@ -42,6 +42,8 @@ $submitButton.on("click", function logPlayerName(){
     $('.dialogueBox').append($speechOptionTwo);
     $("#speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
     $('.nameBox').hide();
+    /* Once player initializes game by inputing name. Start timer! */
+    setTimer();
   
         /* FIXME: URGENT -- NEED TO STOP THIS EVENT LISTENER ONCE CLICKED. SINGULAR ACTION ONE TIME USE ONLY  */
 }
@@ -53,7 +55,7 @@ $submitButton.on("click", function logPlayerName(){
 
 
 
-/* PLAYER BASICS */
+/*SECTION:  PLAYER BASICS */
 
 class Player {
     constructor(givenName) {
@@ -89,3 +91,23 @@ class Player {
 
 
 /*   Icons for Boredom  */
+
+
+
+
+/* SECTION: User Interface Minor Elements */
+
+/* AGE BAR */
+
+let time = 120;
+
+const setTimer = function setTimer() {
+  
+  const updateTime = function updateTime() {
+    console.log("Every 60seconds, character's age is 1 day older", time);
+    $("#ageTimer").text(`Age: ${time} Days`);
+    time++;
+    
+  };
+  const timer = setInterval(updateTime, 1000);
+};
