@@ -9,7 +9,8 @@ $(".partThree").hide();
 
 $(".playGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(1000);
-    $("div .partTwo").fadeIn(1000);
+    $(".partTwo").show();
+    $(".evilHal").fadeIn(1000);
     
 }
 )
@@ -20,7 +21,7 @@ $(".playGame").on("click", function fadeOutofScreen(){
 $(".abortGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(500);               // FIXME: fix fadeout animation
    $(".earlyQuitter").show();
-   $(".evilHal").fadeIn(1000);      //FIXME: Animation wont work
+   $(".astronaut").fadeIn(1000);      //FIXME: Animation wont work
 
 }
 )
