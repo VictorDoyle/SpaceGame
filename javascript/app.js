@@ -36,20 +36,18 @@ const $submitButton =  $("button.submitButton");
 
 /* Initialize Name Submission with Button Click - Store value and return it in Player class */
 $submitButton.on("click", function logPlayerName(){
-    $("p #speechOptionOne").fadeOut(1000); /* fadeout old dialogue for new one */
-
+    $("#speechOptionOne").fadeOut(1000); /* fadeout old dialogue for new one */
     let $playerName = document.getElementById('astronautName').value;
-    const $dialogueAddOn = $(".dialogueBox")
-    console.log(`nice to meet you ${$playerName}`);
-    
-    /* $playerName now has to create a new .dialogueBox <p> with the text saying Hello */ 
-   /*  <p> Hello ${$playername}... That's an interesting temporary name. Anyway, let's get down to survival. */
-
-   $("p #speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
-
-
+    const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${$playerName}... That's an interesting temporary name. Anyway, let's get down to survival.</p>`)
+    $('.dialogueBox').append($speechOptionTwo);
+    $("#speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
+    $('.nameBox').hide();
+  
+        /* FIXME: URGENT -- NEED TO STOP THIS EVENT LISTENER ONCE CLICKED. SINGULAR ACTION ONE TIME USE ONLY  */
 }
 )
+
+
 /* store User Input of Button in const below. This will be reused inside Player class for giving name */
 
 
