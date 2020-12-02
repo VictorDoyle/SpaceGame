@@ -38,14 +38,23 @@ $(".astronautEating img").hide();
 
 const $submitButton =  $("button.submitButton");
 
+
+/* Store $playerName with no value and outer scope, since value is returned within event listener */
+/* NOTE: Not good practice since can be rewritten later but for this app is fine */
+let $playerName;
 /* Initialize Name Submission with Button Click - Store value and return it in Player class */
 $submitButton.on("click", function logPlayerName(){
+
     $("#speechOptionOne").fadeOut(1000); /* fadeout old dialogue for new one */
-    let $playerName = document.getElementById('astronautName').value;
+    $playerName = document.getElementById('astronautName').value;
+
+    /* NOTE: New dialogue options coming after interaction */
     const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${$playerName}... That's an interesting temporary name. Anyway, let's get down to survival.</p>`)
     $('.dialogueBox').append($speechOptionTwo);
     $("#speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
     $('.nameBox').hide();
+    firstAstronaut = new Player()
+
     /* Once player initializes game by inputing name. Start timer! */
     setTimer();
     sleepTimer();
@@ -56,7 +65,6 @@ $submitButton.on("click", function logPlayerName(){
         /* TODO: AFTER MVP --- Need to refactor this terrible looking code */
 }
 )
-
 
 /* store User Input of Button in const below. This will be reused inside Player class for giving name */
 
@@ -76,8 +84,7 @@ $submitButton.on("click", function logPlayerName(){
 const sleepTimer = function sleepTimer() {
   
   const updateSleepTime = function updateSleepTime() {
-    console.log("Every 50 seconds, character's sleep level increases by 1", sleepCount);
-    $("#sleepTimer").text(`Sleep Level: ${sleepCount}.`);
+    console.log("Every 50 seconds, character's sleep level increases by 1. The count is now:", sleepCount);
     sleepCount++;
     firstAstronaut.sleepLevel++;
     if(sleepCount >= 10){
@@ -96,8 +103,7 @@ const sleepTimer = function sleepTimer() {
 const foodTimer = function foodTimer() {
   
   const updateFoodTime = function updateFoodTime() {
-    console.log("Every 50 seconds, character's hunger level increases by 1", foodCount);
-    $("#foodTimer").text(`Hunger Level: ${foodCount}.`);
+    console.log("Every 50 seconds, character's hunger level increases by 1. The count is now:", foodCount);
     foodCount++;
     firstAstronaut.hungerLevel++;
     if(foodCount >= 10){
@@ -116,8 +122,7 @@ let boredCount = 1;
 const boredTimer = function boredTimer() {
   
   const updateBoredTime = function updateBoredTime() {
-    console.log("Every 30 seconds, character's boredom level increases by 1", boredCount);
-    $("#boredTimer").text(`Boredom Level: ${boredCount}.`);
+    console.log("Every 30 seconds, character's boredom level increases by 1. The count is now:", boredCount);
     boredCount++;
     firstAstronaut.boredLevel++;
     if(boredCount >= 10){
@@ -140,8 +145,15 @@ $(".sleepBox").on("click", function playerSleep(){
     $(".astronautEating img").fadeOut(1000);
     $(".astronautSleep img").show();
    
+    if (sleepCount <= 1) { 
+        $(".sleepBox").css("pointer-events:", "none;")   
+    } else if (sleepCount > 1) {
+    
     sleepCount--;
     firstAstronaut.sleepLevel--;
+    $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`);
+    }
+
 }
 )
 
@@ -152,8 +164,14 @@ $(".boredomBox").on("click", function playerFun(){
     $(".astronautEating img").fadeOut(1000);
     $(".astronautFun img").fadeIn(1000);
     
+    if (boredCount <= 1) { 
+        $(".boredomBox").css("pointer-events:", "none;")   
+    } else if (boredCount > 1) {
+    
     boredCount--;
     firstAstronaut.boredLevel--;
+    $("#boredTimer").text(`Boredom Level: ${firstAstronaut.boredLevel}.`);
+    }
     
 }
 )
@@ -166,11 +184,15 @@ $(".foodBox").on("click", function playerEat(){
     $(".astronautSleep img").fadeOut(1000);
     $(".astronautFun img").fadeOut(1000);
     $(".astronautEating img").fadeIn(1000);
+
+    if (foodCount <= 1) { 
+        $(".foodBox").css("pointer-events:", "none;")   
+    } else if (foodCount > 1) {
     
-    /* astronaut new image doing exercise etc .fadeIn(1000) */
-    foodCount--;
-    firstAstronaut.hungerLevel--;
-    
+        foodCount--;
+        firstAstronaut.hungerLevel--;
+        $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`);  
+    }
 }
 )
 
@@ -205,13 +227,13 @@ const setTimer = function setTimer() {
 /*SECTION:  PLAYER BASICS */
 
 class Player {
-    constructor(givenName) {
+    constructor() {           
       // default props
       this.hungerLevel = foodCount;
       this.sleepLevel = sleepCount;
       this.boredLevel = boredCount;
       // assigned props
-      this.name = givenName;
+      this.name =  $playerName;
       
     }
     getHungry() {
@@ -223,6 +245,4 @@ class Player {
     getSleepy() {
     console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
   }
-  }
-
-  const firstAstronaut = new Player(""); /* Have to link .value from input to become new Player (input.value)*/
+  };
