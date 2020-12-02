@@ -78,7 +78,11 @@ $submitButton.on("click", function logPlayerName(){
 /* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
 /* FIXME: AFTER MVP -- Refactor Timer into 1 single timer, with sub functions/if else statements that allow for logging Sleep/Food/Bored in ONE timer*/
 
+
+
 /*             TIMERS                */
+
+
 /*   Timer for Sleep  */
  let sleepCount = 1;
 
@@ -90,12 +94,14 @@ const sleepTimer = function sleepTimer() {
     firstAstronaut.sleepLevel++;
     if(sleepCount >= 10){
         clearInterval(timer);
-        const $deathDialogue1 = $(`<p id="deathDialogue1"> ${firstAstronaut.name}... You died of exhaustion... Who knew life was so exhausting?</p>`)
+        const $deathDialogue1 = $(`<p id="deathDialogue1"> ${firstAstronaut.name}... You died of exhaustion... Who knew life could be so exhausting?</p>`)
     $('.dialogueBox').append($deathDialogue1);
     $("#speechOptionTwo").fadeOut(1000);
     $("#deathDialogue1").fadeIn(1000); 
-    /* add fadeIn image of dead Astronaut FIXME: */ 
+     /* death screen/last screen show */ 
+     deathScreen();
       }
+      
    
   };
   const timer = setInterval(updateSleepTime, 50 * 1000);   /* FIXME: Change values back to 50 after testing */
@@ -117,12 +123,13 @@ const foodTimer = function foodTimer() {
         $('.dialogueBox').append($deathDialogue2);
         $("#speechOptionTwo").fadeOut(1000);
         $("#deathDialogue2").fadeIn(1000); 
-        /* add fadeIn image of dead Astronaut FIXME: */ 
+        /* death screen/last screen show */ 
+        deathScreen();
       }
         
    
   };
-  const timer = setInterval(updateFoodTime, 2 * 1000);   /* FIXME: Change values back to 50 after testing */
+  const timer = setInterval(updateFoodTime, 10 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -140,7 +147,8 @@ const boredTimer = function boredTimer() {
         $('.dialogueBox').append($deathDialogue3);
         $("#speechOptionTwo").fadeOut(1000);
         $("#deathDialogue3").fadeIn(1000); 
-        /* add fadeIn image of dead Astronaut FIXME: */ 
+         /* death screen/last screen show */ 
+         deathScreen();
       }
        
    
@@ -165,6 +173,7 @@ $(".sleepBox").on("click", function playerSleep(){
     sleepCount--;
     firstAstronaut.sleepLevel--;
     $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`);
+    
     }
 
 }
@@ -223,8 +232,13 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
-    if(boredCount >= 10 , foodCount >= 10 ,sleepCount >= 10 ){  /* FIXME: */
+    if(time >= 5){  /* FIXME: */
         clearInterval(timer);
+        const $easterEggDialogue1 = $(`<p id="easterEggDialogue1"> ${firstAstronaut.name}... You've been here awfully long! You still haven't died nor found any friends on this planet. Time for some action I think...</p>`)
+        $('.dialogueBox').append($easterEggDialogue1);
+        $("#easterEggDialogue1").fadeIn(1000); 
+         deathScreen(); 
+
       }
     /* add clearInterval if Player dies */
    /*  if (player.hungerLevel === 0 || player.boredLevel === 0 || player.sleepLevel === 0) { //FIXME: Revisit use of || not the best here
@@ -259,3 +273,14 @@ class Player {
     console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
   }
   };
+
+
+  /* DEATH/LOSING USER SCREEN */
+
+ /*  function deathScreen(); */ //FIXME: readd
+
+function deathScreen(){
+    $("div .partOne").fadeOut(1000);
+    $(".partTwo").fadeOut(8000);       
+    $(".partThree").fadeIn(8000);
+}
