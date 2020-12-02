@@ -225,7 +225,8 @@ html{
 /* Icons for Sleep */
 /* <div class="sleepBox"> */
 .sleepBox {
-  background: white;
+  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%);;
+  text-align: center;
   margin: 30px;
   border-radius: 50%;
   width: 200px;
@@ -237,8 +238,9 @@ html{
 /* <div class="foodBox"> */
 
 .foodBox {
-  background: white;
+  background: linear-gradient(180deg, #d53369 0%, #daae51 100%);;
   margin: 30px;
+  text-align: center;
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -248,8 +250,9 @@ html{
 /* Icons for Boredom */
 /* <div class="boredomBox"> */
 .boredomBox {
-  background: white;
+  background: linear-gradient(360deg, #FC466B 0%, #3F5EFB 100%);
   margin: 30px;
+  text-align: center;
   border-radius: 50%;
   width: 200px;
   height: 200px;
