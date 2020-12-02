@@ -145,7 +145,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  const timer = setInterval(updateBoredTime, 10 * 1000);   /* FIXME: Change values back to 30 after testing */
+  const timer = setInterval(updateBoredTime, 1 * 1000);   /* FIXME: Change values back to 30 after testing */
 }; 
 
 

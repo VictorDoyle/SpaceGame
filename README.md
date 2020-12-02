@@ -37,6 +37,8 @@ If the User Plays the Game but does not help the astronaut in time and lets limi
 
 ## Resources
 1. Seperated Resources into Files. Media containing all images,sounds,icons.
+2. Dead Astronaut Image taken from: http://brandonvickerd.com/dead-astronaut
+3. Astronaut_static / astronaut-eating / astronaut-sleeping / astronaut-sightseeing are photoshopped & edited versions of NASA Open Domain Images.
 
 
 
