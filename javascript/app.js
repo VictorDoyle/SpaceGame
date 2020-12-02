@@ -163,7 +163,7 @@ $(".sleepBox").on("click", function playerSleep(){
 /*   Event Click for Boredom  */
 $(".boredomBox").on("click", function playerFun(){     
     $(".astronaut img").fadeOut(1000);
-    /* astronaut new image doing exercise etc .fadeIn(1000) */
+    $(".astronautFun img").fadeIn(1000);
     boredCount--;
     
 }
@@ -174,6 +174,7 @@ $(".boredomBox").on("click", function playerFun(){
 
 $(".foodBox").on("click", function playerEat(){     
     $(".astronaut img").fadeOut(1000);
+    
     /* astronaut new image doing exercise etc .fadeIn(1000) */
     foodCount--;
     

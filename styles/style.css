@@ -180,6 +180,8 @@ html{
   }
 
   /* USER CHOOSES PLAY */
+
+  /* MAIN ASTRONAUT CHARACTER VISUALS + ANIMATION */
   .astronaut {
     display: flex;
     margin-left: 40%;
@@ -200,6 +202,30 @@ html{
           100%{top:0em}
            /* end bounce */
         }
+
+        .astronautFun {
+          display: flex;
+          margin-left: 40%;
+          margin-top: 15%;
+          z-index: 15;
+          animation:spaceFunLeft 4s linear infinite;
+          
+              position:relative;
+              } /* explore left animation style for astronaut */
+              @keyframes spaceFunLeft {
+                0%{left:0em} /* begin slide */
+                20%{left:0em}
+                40%{left:-0.5em}
+                45%{left:-0.75em}
+                50%{left:-1em}
+                55%{left:-0.75em}
+                60%{left:-0.5em}
+                80%{left:0em}
+                100%{left:0em}
+                 /* end slide left */
+                 /* flip and restart bounce with right side below */
+              }
+            
     
   
 /* SECTION 2 -- USER PLAY PAGE + USER INTERFACE ELEMENTS + ANIMATION  */
