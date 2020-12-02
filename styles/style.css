@@ -203,6 +203,8 @@ html{
            /* end bounce */
         }
 
+
+        /* Astronaut Boredom Click Event */
         .astronautFun {
           display: flex;
           justify-content: left ;
@@ -227,7 +229,19 @@ html{
                  /* flip and restart bounce with right side below */
               }
               
-              .astronaut {
+
+              /* Astronaut Sleep Click Event */
+              .astronautSleep {
+                display: flex;
+                margin-left: 40%;
+                margin-top: 15%;
+                z-index: 10;
+                animation:spaceBounce 3s infinite linear;
+                    position:relative;
+               }
+
+               /* Astronaut Eat Click Event */
+               .astronautEating {
                 display: flex;
                 margin-left: 40%;
                 margin-top: 15%;

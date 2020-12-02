@@ -11,8 +11,6 @@ $(".playGame").on("click", function fadeOutofScreen(){
     $("div .partOne").fadeOut(1000);
     $(".partTwo").show();       /* FIXME: Make smoother animation FadeIn for Part Two */
     $(".astronaut img").fadeIn(1000);
-
-    
 }
 )
 
@@ -31,7 +29,10 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 /* SECTION: GAME RULES/BASICS JAVASCRIPT */
 
 /* HIDE OTHER ASTRONAUT ANIMATIONS WHILE PLAYING MAIN GAME. ONLY INITIALIZE SHOW() AFTER BUTTONS CLICKED */
+/* FIXME: Animations not showing when img el hidden and then shown. fix after MVP */
 $(".astronautFun img").hide();
+$(".astronautSleep img").hide();
+$(".astronautEating img").hide();
 
 /* Input + Button for character name submission */
 
@@ -135,7 +136,10 @@ const boredTimer = function boredTimer() {
 /*   Event Click for Sleep  */
 $(".sleepBox").on("click", function playerSleep(){     
     $(".astronaut img").fadeOut(1000);
-    /* astronaut new image sleeping .fadeIn(1000) */
+    $(".astronautFun img").fadeOut(1000);
+    $(".astronautEating img").fadeOut(1000);
+    $(".astronautSleep img").show();
+   
     sleepCount--;
     firstAstronaut.sleepLevel--;
 }
@@ -144,7 +148,10 @@ $(".sleepBox").on("click", function playerSleep(){
 /*   Event Click for Boredom  */
 $(".boredomBox").on("click", function playerFun(){     
     $(".astronaut img").fadeOut(1000);
+    $(".astronautSleep img").fadeOut(1000);
+    $(".astronautEating img").fadeOut(1000);
     $(".astronautFun img").fadeIn(1000);
+    
     boredCount--;
     firstAstronaut.boredLevel--;
     
@@ -156,6 +163,9 @@ $(".boredomBox").on("click", function playerFun(){
 
 $(".foodBox").on("click", function playerEat(){     
     $(".astronaut img").fadeOut(1000);
+    $(".astronautSleep img").fadeOut(1000);
+    $(".astronautFun img").fadeOut(1000);
+    $(".astronautEating img").fadeIn(1000);
     
     /* astronaut new image doing exercise etc .fadeIn(1000) */
     foodCount--;
