@@ -273,13 +273,14 @@ html{
                     position:relative;
                }
 
-               /* Astronaut Die Event */
+               /* Astronaut Evolved Event */
 
-               .astronautDying {
+               .astronautEvolution1 {
                 display: flex;
-                margin-left: 40%;
-                margin-top: 15%;
+                margin-top: 10%;
                 z-index: 10;
+                justify-content: center;
+                
                 animation:spaceBounce 3s infinite linear;
                     position:relative;
                     } /* Floating animation style for astronaut */

@@ -41,7 +41,7 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 $(".astronautFun img").hide();
 $(".astronautSleep img").hide();
 $(".astronautEating img").hide();
-$(".astronautDying img").hide();
+$(".astronautEvolution1 img").hide();
 
 
 /* Input + Button for character name submission */
@@ -60,7 +60,7 @@ $submitButton.on("click", function logPlayerName(){
     firstAstronaut = new Player()
 
     /* NOTE: New dialogue options coming after interaction */
-    const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${firstAstronaut.name}... That's an interesting temporary name. Anyway, let's get down to survival.</p>`)
+    const $speechOptionTwo = $(`<p id="speechOptionTwo">Hello ${firstAstronaut.name}... That's an interesting temporary name. Anyway, let's get down to survival: You'll find your survival icons on the Right Side of the Screen. Click those as often as you can before they hit 10. Or else...</p>`)
     $('.dialogueBox').append($speechOptionTwo);
     $("#speechOptionTwo").fadeIn(1000);    /* new dialogue fade in after getting user input for name */
     $('.nameBox').hide();
@@ -102,7 +102,7 @@ const sleepTimer = function sleepTimer() {
     firstAstronaut.sleepLevel++;
     $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`)
     if(sleepCount >= 10){
-        /* clearInterval(timer); */
+       
         const $deathDialogue1 = $(`<p id="deathDialogue1"> ${firstAstronaut.name}... You died of exhaustion... Who knew life could be so exhausting?</p>`)
     $('.dialogueBox').append($deathDialogue1);
     $("#speechOptionTwo").fadeOut(1000);
@@ -113,7 +113,7 @@ const sleepTimer = function sleepTimer() {
       
    
   };
-  timers.sleep = setInterval(updateSleepTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.sleep = setInterval(updateSleepTime, 90 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -128,7 +128,7 @@ const foodTimer = function foodTimer() {
     firstAstronaut.hungerLevel++;
     $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`)
     if(foodCount >= 10){
-        /* clearInterval(timer); */
+     
         const $deathDialogue2 = $(`<p id="deathDialogue2"> ${firstAstronaut.name}... Did you forget about all those snacks you have? They could have really helped. Not anymore!</p>`)
         $('.dialogueBox').append($deathDialogue2);
         $("#speechOptionTwo").fadeOut(1000);
@@ -139,7 +139,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  timers.hunger = setInterval(updateFoodTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.hunger = setInterval(updateFoodTime, 90 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -153,7 +153,7 @@ const boredTimer = function boredTimer() {
     firstAstronaut.boredLevel++;
     $("#boredTimer").text(`Boredom Level: ${firstAstronaut.boredLevel}.`)
     if(boredCount >= 10){
-       /*  clearInterval(timer); */
+     
         const $deathDialogue3 = $(`<p id="deathDialogue3"> ${firstAstronaut.name}. I know existence can seem futile, but dying of an existential crisis while abroad seems questionable... Your memories of Nietzsche cannot help you now</p>`)
         $('.dialogueBox').append($deathDialogue3);
         $("#speechOptionTwo").fadeOut(1000);
@@ -164,7 +164,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  timers.bored = setInterval(updateBoredTime, 15 * 1000);   /* FIXME: Change values back to 15 after testing */
+  timers.bored = setInterval(updateBoredTime, 90 * 1000);   /* FIXME: Change values back to 15 after testing */
 }; 
 
 
@@ -260,17 +260,43 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
-    if(time >= 5){  /* FIXME: */
-        clearInterval(timer);
-        const $easterEggDialogue1 = $(`<p id="easterEggDialogue1"> ${firstAstronaut.name}... You've been here awfully long! You still haven't died nor found any friends on this planet. Time for some action I think...</p>`)
-        $('.dialogueBox').append($easterEggDialogue1);
-        $("#easterEggDialogue1").fadeIn(1000); 
-         deathScreen(); 
+    if(time === 5){ 
+        const $evolveStage1Dialogue1 = $(`<p id="evolveStage1Dialogue1"> ${firstAstronaut.name}... You've been here awfully long! You still haven't died nor have you found any friends on this planet. Your body seems to be adapting rather well!</p>`)
+        const $evolveStage1Dialogue2 = $(`<p id="evolveStage1Dialogue2"> You look like... you're changing... The atmospheric influence on your body is unprecedented. I will be looking forward to analyzing you further, if you survive that is...</p>`)
+        $('.dialogueBox').append($evolveStage1Dialogue1);
+        $("#speechOptionTwo").fadeOut(1000)
+        $("#evolveStage1Dialogue1").fadeIn(1000); 
+        $("#evolveStage1Dialogue1").delay(5000).fadeOut(3000); 
 
+        $('.dialogueBox').append($evolveStage1Dialogue2);
+        $("#evolveStage1Dialogue2").hide(); 
+        $("#evolveStage1Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
+
+         /* deathScreen() */; 
+         /* TODO: change audio here */
+         /* TODO: change astronaut image */
+         $(".astronautSleep img").fadeOut(1000);
+         $(".astronautFun img").fadeOut(1000);
+         $(".astronautEating img").fadeOut(1000);
+         $(".astronautEvolution1 img").delay(2000).fadeIn(1000);
+         time++
       }
-    
+    if(time >= 15) {
+      const $evolveStage2Dialogue1 = $(`<p id="evolveStage2Dialogue1"> You've really surprised me ${firstAstronaut.name} ! I expected you to die long ago... I believe I have received an urgent transmission.</p>`)
+        const $evolveStage2Dialogue2 = $(`<p id="evolveStage2Dialogue2"> You must immediately return to the spaceship. Close all the doors. There is an imminent danger incoming.</p>`)
+        $('.dialogueBox').append($evolveStage2Dialogue1);
+        $("#evolveStage1Dialogue2").fadeOut(1000)
+        $("#evolveStage2Dialogue1").fadeIn(1000); 
+        $("#evolveStage2Dialogue1").delay(5000).fadeOut(3000); 
+
+        $('.dialogueBox').append($evolveStage2Dialogue2);
+        $("#evolveStage2Dialogue2").hide(); 
+        $("#evolveStage2Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
+
+        easterEggDeathScreen().delay(5000);
+    }
   };
-  timers.age = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 1 * 1000); /* Every 1 minute, 1 day goes by */
 };
 
 
@@ -297,9 +323,25 @@ function deathScreen(){
     clearInterval(timers.hunger);
     clearInterval(timers.bored);
     clearInterval(timers.sleep);
+    clearInterval(timers.age);
     $("div .partOne").fadeOut(1000);
     $(".partTwo").fadeOut(8000);       
     $(".partThree").fadeIn(8000); /* FIXME: Not fading in properly*/
     /* make a reset/try again button on death page */
 }
+
+
+
+function easterEggDeathScreen(){
+  clearInterval(timers.hunger);
+  clearInterval(timers.bored);
+  clearInterval(timers.sleep);
+  clearInterval(timers.age);
+  $("div .partOne").fadeOut(1000);
+  $(".partTwo").fadeOut(8000);       
+  $(".earlyQuitter").fadeIn(3000);
+   $("div.evilHal img").fadeIn(3000);
+
+}
+
 
