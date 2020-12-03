@@ -10,6 +10,7 @@ $(".partThree").hide();
 /* added game soundtrack to work on click */
 let gameSoundtrack = document.getElementById("gameSoundtrack");
 
+/* TODO: Post-MVP , rewrite custom Music player button */
 function playAudio() {
   gameSoundtrack.play();
 }
@@ -36,7 +37,6 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 
 /* SECTION: GAME RULES/BASICS JAVASCRIPT */
 
-/* HIDE OTHER ASTRONAUT ANIMATIONS WHILE PLAYING MAIN GAME. ONLY INITIALIZE SHOW() AFTER BUTTONS CLICKED */
 /* FIXME: Animations not showing when img el hidden and then shown. fix after MVP */
 $(".astronautFun img").hide();
 $(".astronautSleep img").hide();
@@ -77,15 +77,12 @@ $submitButton.on("click", function logPlayerName(){
 }
 )
 
-/* store User Input of Button in const below. This will be reused inside Player class for giving name */
 
 
 
 
 
   /* SECTION: User Interface Major Elements */
-  /* TODO: AFTER MVP */
-/* Maybe use fadeTo(0.5) to highlight certain user elements during tutorial? */
 /* FIXME: AFTER MVP -- Refactor Timer into 1 single timer, with sub functions/if else statements that allow for logging Sleep/Food/Bored in ONE timer*/
 
 
@@ -116,7 +113,7 @@ const sleepTimer = function sleepTimer() {
       
    
   };
-  timers.sleep = setInterval(updateSleepTime, 2 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.sleep = setInterval(updateSleepTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -142,7 +139,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  timers.hunger = setInterval(updateFoodTime, 3 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.hunger = setInterval(updateFoodTime, 30 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -167,7 +164,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  timers.bored = setInterval(updateBoredTime, 1 * 1000);   /* FIXME: Change values back to 30 after testing */
+  timers.bored = setInterval(updateBoredTime, 15 * 1000);   /* FIXME: Change values back to 15 after testing */
 }; 
 
 
@@ -271,9 +268,6 @@ const setTimer = function setTimer() {
          deathScreen(); 
 
       }
-    /* add clearInterval if Player dies */
-   /*  if (player.hungerLevel === 0 || player.boredLevel === 0 || player.sleepLevel === 0) { //FIXME: Revisit use of || not the best here
-        clearInterval(timer); */
     
   };
   timers.age = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
@@ -299,15 +293,13 @@ class Player {
 
   /* DEATH/LOSING USER SCREEN */
 
- /*  function deathScreen(); */ //FIXME: readd
-
 function deathScreen(){
     clearInterval(timers.hunger);
     clearInterval(timers.bored);
     clearInterval(timers.sleep);
     $("div .partOne").fadeOut(1000);
-    $(".partTwo").fadeOut(9000);       
-    $(".partThree").fadeIn(8000);
+    $(".partTwo").fadeOut(8000);       
+    $(".partThree").fadeIn(8000); /* FIXME: Not fading in properly*/
     /* make a reset/try again button on death page */
 }
 

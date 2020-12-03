@@ -31,19 +31,19 @@ html{
   }
 
   /* SEPARATE BODY CSS FOR GAME PLAY */
-
-  .partTwo {
+/* NOTE: Re-add after MVP */
+  /* .partTwo { 
+    position: flex;
     background-image: url(media/images/backgroundSpaceImage.png);
     background-size: cover;
     z-index: 0;
-  }
+  } */
 
   /* Creating Responsive Layout for Browser window size change without @media */
-  .responsive {
+ /*  .responsive {
     width: 100%;
     max-width: 400px;
-    height: auto;
-  }
+  } */
 
   .gameMusic {      /* FIXME: Later version build custom player */
     position: absolute;
@@ -212,9 +212,10 @@ html{
   /* MAIN ASTRONAUT CHARACTER VISUALS + ANIMATION */
   .astronaut {
     display: flex;
-    margin-left: 40%;
-    margin-top: 15%;
+    margin-top: 10%;
     z-index: 10;
+    justify-content: center;
+    
     animation:spaceBounce 3s infinite linear;
         position:relative;
         } /* Floating animation style for astronaut */
@@ -235,9 +236,9 @@ html{
         /* Astronaut Boredom Click Event */
         .astronautFun {
           display: flex;
-          justify-content: left ;
-          margin-left: 40%;
-          z-index: 15;
+          justify-content: center ;
+          top: 30%;
+          z-index: 10;
           animation:spaceFunLeft 4s linear infinite;
           
               position:relative;
@@ -261,8 +262,8 @@ html{
               /* Astronaut Sleep Click Event */
               .astronautSleep {
                 display: flex;
-                margin-left: 40%;
-                margin-top: 15%;
+                justify-content: center ;
+                top: 30%;
                 z-index: 10;
                 animation:spaceBounce 3s infinite linear;
                     position:relative;
@@ -271,8 +272,8 @@ html{
                /* Astronaut Eat Click Event */
                .astronautEating {
                 display: flex;
-                margin-left: 40%;
-                margin-top: 15%;
+                justify-content: center ;
+                top: 30%;
                 z-index: 10;
                 animation:spaceBounce 3s infinite linear;
                     position:relative;
@@ -414,6 +415,11 @@ html{
 
 /* END GAME TYPE WRITER ANIMATION */
 
+.partThree {
+  z-index: 50;
+  display:none;
+  
+}
 
 .endTypewriter1 p {
   overflow: hidden;
