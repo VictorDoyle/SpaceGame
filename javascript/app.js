@@ -292,7 +292,7 @@ const setTimer = function setTimer() {
          $(".astronautEvolution1 img").delay(2000).fadeIn(1000);
          time++
       }
-    if(time >= 15) {
+    if(time === 15) {
       const $evolveStage2Dialogue1 = $(`<p id="evolveStage2Dialogue1"> You've really surprised me ${firstAstronaut.name} ! I expected you to die long ago... I believe I have received an urgent transmission.</p>`)
         const $evolveStage2Dialogue2 = $(`<p id="evolveStage2Dialogue2"> You must immediately return to the spaceship. Close all the doors. There is an imminent danger incoming.</p>`)
         $('.dialogueBox').append($evolveStage2Dialogue1);
@@ -303,11 +303,13 @@ const setTimer = function setTimer() {
         $('.dialogueBox').append($evolveStage2Dialogue2);
         $("#evolveStage2Dialogue2").hide(); 
         $("#evolveStage2Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
+    }
 
-        easterEggDeathScreen().delay(5000);
+    if(time >= 17) {
+      easterEggDeathScreen().delay(5000);
     }
   };
-  timers.age = setInterval(updateTime, 1 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 3 * 1000); /* Every 1 minute, 1 day goes by */
 };
 
 
