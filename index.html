@@ -80,12 +80,24 @@
 
  <!-- PART TWO IS MAIN GAMEPLAY -->
 <div class="partTwo">
+
+  <!-- Background Image Static -->
   
+  <div class="backgroundSpace"> 
+    <img src="media/images/backgroundSpaceImage.png" alt="astronaut-static">
+  </div>
   <!-- Base Static Astronaut Image -->
-  <div class="allAstronauts">
+  
   <div class="astronaut"> 
     <img src="media/images/astronaut_static.png" alt="astronaut-static" width="350" height="350">
   </div>
+  <!-- Base Static Astronaut Background -->
+
+  <div class="astronaut"> 
+    <img src="media/images/astronaut_static.png" alt="astronaut-static" width="350" height="350">
+  </div> <!-- FIXME: -->
+
+
   <!-- Astronaut Image for when User clicks Boredom Button -->
   <div class="astronautFun"> 
     <img src="media/images/astronaut-sightseeing.png" alt="astronaut-fun" width="350" height="350">
@@ -99,7 +111,7 @@
     <img src="media/images/astronaut-eating.png" alt="astronaut-eating" width="350" height="350">
   </div>
 
-</div>
+
 
   <!-- Dialogue Box Between User & AI -->
   <div class="dialogueBox responsive">
@@ -122,6 +134,7 @@
     <div class="sleepBox">
     
     <span id="sleepTimer"> Sleep Level: 0. </span> <!-- every 50seconds increases by 1. -->
+    <img id="sleepIcon" src="media/icons/sleep_icon.png" alt="astronaut-static" width="150" height="150">
     </div>
 
     <!-- Icons for Boredom --> <!-- FIXME: ADD ICONS HERE -->
@@ -134,6 +147,7 @@
     <div class="foodBox">
     
     <span id="foodTimer"> Hunger Level: 0. </span> <!-- every 50seconds increases by 1. -->
+    <img id="foodIcon" src="media/icons/food_icon.png" alt="astronaut-static" width="150" height="150">
     </div>
     
 </div>

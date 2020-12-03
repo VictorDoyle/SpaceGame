@@ -30,6 +30,14 @@ html{
     overflow-x: hidden;
   }
 
+  /* SEPARATE BODY CSS FOR GAME PLAY */
+
+  .partTwo {
+    background-image: url(media/images/backgroundSpaceImage.png);
+    background-size: cover;
+    z-index: 0;
+  }
+
   /* Creating Responsive Layout for Browser window size change without @media */
   .responsive {
     width: 100%;
@@ -195,6 +203,12 @@ html{
 
   /* USER CHOOSES PLAY */
 
+
+  /* BACKGROUND IMAGE */
+  .backgroundSpace {
+    color: transparent;
+  }
+
   /* MAIN ASTRONAUT CHARACTER VISUALS + ANIMATION */
   .astronaut {
     display: flex;
@@ -325,7 +339,7 @@ html{
 /* Icons for Sleep */
 /* <div class="sleepBox"> */
 .sleepBox {
-  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%);
+  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%); /* FIXME: change colors smoother */
   text-align: center;
   margin: 30px;
   border-radius: 50%;
@@ -344,7 +358,7 @@ html{
 /* <div class="foodBox"> */
 
 .foodBox {
-  background: linear-gradient(180deg, #d53369 0%, #daae51 100%);;
+  background: linear-gradient(180deg, #d53369 0%, #daae51 100%);; /* FIXME: change colors smoother */
   margin: 30px;
   text-align: center;
   border-radius: 50%;
@@ -362,7 +376,7 @@ html{
 /* Icons for Boredom */
 /* <div class="boredomBox"> */
 .boredomBox {
-  background: linear-gradient(360deg, #FC466B 0%, #3F5EFB 100%);
+  background: linear-gradient(360deg, #FC466B 0%, #3F5EFB 100%); /* FIXME: change colors smoother */
   margin: 30px;
   cursor: pointer;      
   text-align: center;
