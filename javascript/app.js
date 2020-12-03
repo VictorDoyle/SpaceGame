@@ -306,7 +306,7 @@ const setTimer = function setTimer() {
     }
 
     if(time >= 17) {
-      easterEggDeathScreen().delay(5000);
+      easterEggDeathScreen();
     }
   };
   timers.age = setInterval(updateTime, 3 * 1000); /* Every 1 minute, 1 day goes by */
@@ -353,7 +353,7 @@ function easterEggDeathScreen(){
   $(".partTwo").fadeOut(8000);       
   $(".earlyQuitter").fadeIn(3000);
    $("div.evilHal img").fadeIn(3000);
-
+   $(".retryGame").fadeIn(5000);
 }
 
 /* RETRY/REST BUTTON */

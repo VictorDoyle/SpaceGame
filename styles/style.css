@@ -345,7 +345,7 @@ html{
     inset 20px 0 300px rgb(195, 138, 249),  /* inner left  */
     inset -20px 0 300px rgb(244, 6, 129), /* inner right  */
     0 0 50px rgb(177, 177, 177),            /* outer white for nice glow */
-    -10px 0 80px rgb(255, 0, 0),        /* outer left  */
+    -10px 0 80px rgba(255, 0, 195, 0.701),        /* outer left  */
     10px 0 80px rgb(111, 0, 255);         /* outer right  */     
       
     }
@@ -375,7 +375,6 @@ html{
 /* Icons for Sleep */
 /* <div class="sleepBox"> */
 .sleepBox {
-  background: linear-gradient(360deg, #3F2B96 0%, #A8C0FF 100%); /* FIXME: change colors smoother */
   text-align: center;
   margin: 30px;
   border-radius: 50%;
@@ -383,11 +382,21 @@ html{
   width: 200px;
   height: 200px;
   z-index: 25;
+  opacity: 80%;
+  box-shadow:
+    inset 0 0 50px rgb(108, 108, 108),      /* inner white - keep for subtle foggy look*/
+    inset 20px 0 80px rgb(0, 229, 255),   /* inner left  */
+    inset -20px 0 80px rgb(247, 107, 207),  /* inner right  */
+    inset 20px 0 300px rgb(195, 138, 249),  /* inner left  */
+    inset -20px 0 300px rgb(6, 42, 244), /* inner right  */
+    0 0 50px rgb(177, 177, 177),            /* outer white for nice glow */
+    -10px 0 80px rgba(0, 38, 255, 0.345),        /* outer left  */
+    10px 0 80px rgb(111, 0, 255);   /* outer right */
 }
 
 .sleepBox:hover {
-  opacity: 95%;
-  box-shadow: 0 0 15px whitesmoke;
+  
+  opacity: 100%;
 }
 
 /* Icons for Food */
@@ -402,11 +411,21 @@ html{
   width: 200px;
   height: 200px;
   z-index: 25;
+  opacity: 80%;
+  box-shadow:
+    inset 0 0 50px rgb(109, 109, 109),      /* inner white - keep for subtle foggy look*/
+    inset 20px 0 80px rgb(244, 159, 232),   /* inner left  */
+    inset -20px 0 80px rgb(249, 70, 70),  /* inner right  */
+    inset 20px 0 300px rgb(80, 174, 176),  /* inner left  */
+    inset -20px 0 300px rgb(196, 98, 140), /* inner right  */
+    0 0 50px rgb(96, 96, 96),            /* outer white for nice glow */
+    -10px 0 40px rgb(255, 111, 0),        /* outer left  */
+    10px 0 40px rgba(255, 0, 0, 0.728);   /* outer right */
+  
 }
 
 .foodBox:hover {
-  opacity: 95%;
-  box-shadow: 0 0 15px whitesmoke;
+  opacity: 100%;
 }
 
 /* Icons for Boredom */
@@ -420,11 +439,20 @@ html{
   width: 200px;
   height: 200px;
   z-index: 25;
+  opacity: 80%;
+  box-shadow:
+    inset 0 0 50px rgb(109, 109, 109),      /* inner white - keep for subtle foggy look*/
+    inset 20px 0 80px rgb(0, 255, 34),   /* inner left  */
+    inset -20px 0 80px rgb(249, 70, 198),  /* inner right  */
+    inset 20px 0 300px rgb(106, 189, 154),  /* inner left  */
+    inset -20px 0 300px rgb(196, 98, 140), /* inner right  */
+    0 0 50px rgb(96, 96, 96),            /* outer white for nice glow */
+    -10px 0 40px rgb(149, 255, 0),        /* outer left  */
+    10px 0 40px rgba(98, 255, 0, 0.345);   /* outer right */
 }
 
 .boredomBox:hover {
-  opacity: 95%;
-  box-shadow: 0 0 15px whitesmoke;
+  opacity: 100%;
 }
   
 
