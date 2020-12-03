@@ -36,9 +36,10 @@ If the User Plays the Game but does not help the astronaut in time and lets limi
 ![SpaceGameIntroduction3](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/wireframe/endGameWindows.png)
 
 ## Resources
-1. Seperated Resources into Files. Media containing all images,sounds,icons.
+1. Game Music from Space-22.
 2. Dead Astronaut Image taken from: http://brandonvickerd.com/dead-astronaut
 3. Astronaut_static / astronaut-eating / astronaut-sleeping / astronaut-sightseeing are photoshopped & edited versions of NASA Open Domain Images.
+4. Cryopod Image for Sleep Icon taken from https://www.turbosquid.com/FullPreview/Index.cfm/ID/1217889.
 
 
 
