@@ -31,24 +31,14 @@ html{
   }
 
   /* SEPARATE BODY CSS FOR GAME PLAY */
-/* NOTE: Re-add after MVP */
-  /* .partTwo { 
-    position: flex;
-    background-image: url(media/images/backgroundSpaceImage.png);
-    background-size: cover;
-    z-index: 0;
-  } */
 
-  /* Creating Responsive Layout for Browser window size change without @media */
- /*  .responsive {
-    width: 100%;
-    max-width: 400px;
-  } */
+
 
   .gameMusic {      /* FIXME: Later version build custom player */
     position: absolute;
     justify-content: left;
     bottom: 15px;
+    z-index: 100;
   }
 
   /* Element Styles */
@@ -61,6 +51,7 @@ html{
       font-size: 180%;
       text-align: center;
       letter-spacing: 0;
+      z-index: 10;
       padding-left: 10px;
       animation: typing 3.5s steps(44, end), blink-caret .75s step-end 4.1;
       }
@@ -75,6 +66,7 @@ html{
         text-align: center;
         letter-spacing: 0;
         padding-left: 10px;
+        z-index: 10;
         opacity: 0;
         animation: typing 3.5s steps(44, end), blink-caret .75s step-end 4.1, slidein 1s ease 3.5s forwards;
         animation-delay: 2s;
@@ -89,6 +81,7 @@ html{
           text-align: center;
           letter-spacing: 0;
           padding-left: 10px;
+          z-index: 10;
           opacity: 0;
           animation: typing 3.5s steps(44, end), blink-caret .75s step-end /* add infinite for continuous blinking animation */, slidein 1s ease 3.5s forwards;
           animation-delay: 7s;
@@ -104,6 +97,7 @@ html{
           text-align: center;
           letter-spacing: 0;
           padding-left: 10px;
+          z-index: 10;
           opacity: 0;
           animation: typing 3.5s steps(44, end), blink-caret .75s step-end infinite, slidein 1s ease 3.5s forwards;
           animation-delay: 10s;
