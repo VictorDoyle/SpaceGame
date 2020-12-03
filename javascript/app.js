@@ -340,7 +340,6 @@ function deathScreen(){
     $("div .partOne").fadeOut(1000);
     $(".partTwo").fadeOut(8000);       
     $(".partThree").fadeIn(8000); /* FIXME: Not fading in properly*/
-    /* make a reset/try again button on death page */
 }
 
 
@@ -357,4 +356,10 @@ function easterEggDeathScreen(){
 
 }
 
+/* RETRY/REST BUTTON */
 
+$(".retryGame").on("click", function restartGame(){
+  location.reload();
+  return false;
+}
+)

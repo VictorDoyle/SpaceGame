@@ -136,7 +136,7 @@ html{
   padding-top: 20%; 
 }
 
-    button.playGame , button.abortGame {
+    button.playGame , button.abortGame , button.retryGame {
       position: relative;
        width: 42px; height: 42px;
       display: inline-block;
@@ -151,10 +151,14 @@ html{
       text-align:center;
       transition: all 0.2s;
       }
-      button.playGame:hover , button.abortGame:hover {
+      button.playGame:hover , button.abortGame:hover , button.retryGame:hover {
         color:#000000;
         background-color:#FFFFFF;
         cursor: pointer;
+      }
+
+      button.retryGame {
+        margin-left: 0;
       }
 
       /* Button bounce animation */
@@ -335,14 +339,14 @@ html{
     animation: rotation 8s infinite linear;
 
     box-shadow:
-      inset 0 0 50px rgb(255, 255, 255),      /* inner white - keep for subtle foggy look*/
-      inset 20px 0 80px rgb(44, 44, 177),   /* inner left  */
-      inset -20px 0 80px rgb(177, 177, 177),  /* inner right  */
-      inset 20px 0 300px rgb(252, 90, 147),  /* inner left  */
-      inset -20px 0 300px rgb(244, 6, 6), /* inner right  */
-      0 0 50px #fff,            /* outer white for nice glow */
-      -10px 0 80px rgba(0, 229, 255, 0.995),        /* outer left  */
-      10px 0 80px rgb(212, 0, 255);         /* outer right  */
+    inset 0 0 50px rgb(208, 208, 208),      /* inner white - keep for subtle foggy look*/
+    inset 20px 0 80px rgb(255, 0, 17),   /* inner left  */
+    inset -20px 0 80px rgb(247, 107, 207),  /* inner right  */
+    inset 20px 0 300px rgb(195, 138, 249),  /* inner left  */
+    inset -20px 0 300px rgb(244, 6, 129), /* inner right  */
+    0 0 50px rgb(177, 177, 177),            /* outer white for nice glow */
+    -10px 0 80px rgb(255, 0, 0),        /* outer left  */
+    10px 0 80px rgb(111, 0, 255);         /* outer right  */     
       
     }
       
@@ -354,6 +358,7 @@ html{
       transform: rotate(359deg);
     }
   }
+
 
   /* Setting Food/Sleep/Bored Icons on far Right with contained div style */
 
@@ -522,3 +527,17 @@ html{
         transform: rotate(359deg);
       }
     }
+
+    /* OUTRO BUTTONS */
+
+    .outro-buttons {
+  margin-top: 5%;
+  padding-top: 1%;
+  margin-right: -5%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+    }
+
+    
