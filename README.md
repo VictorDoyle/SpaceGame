@@ -40,6 +40,7 @@ If the User Plays the Game but does not help the astronaut in time and lets limi
 2. Dead Astronaut Image taken from: http://brandonvickerd.com/dead-astronaut
 3. Astronaut_static / astronaut-eating / astronaut-sleeping / astronaut-sightseeing are photoshopped & edited versions of NASA Open Domain Images.
 4. Cryopod Image for Sleep Icon taken from https://www.turbosquid.com/FullPreview/Index.cfm/ID/1217889.
+5. Multi-tool scanner image taken from https://www.xainesworld.com/wp-content/uploads/2019/08/Alien-MT-7.png. 
 
 
 
