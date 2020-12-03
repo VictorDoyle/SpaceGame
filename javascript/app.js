@@ -4,11 +4,13 @@
 $(".earlyQuitter").hide();
 $(".partTwo").hide();
 $(".partThree").hide();
+$("#evolvedSoundtrack").hide();
 
 /* ANIMATION TO FADE OUT WHEN PLAY BUTTON CLICKED*/
 
 /* added game soundtrack to work on click */
 let gameSoundtrack = document.getElementById("gameSoundtrack");
+gameSoundtrack.loop = true;
 
 /* TODO: Post-MVP , rewrite custom Music player button */
 function playAudio() {
@@ -76,6 +78,13 @@ $submitButton.on("click", function logPlayerName(){
         /* TODO: AFTER MVP --- Need to refactor this terrible looking code */
 }
 )
+
+/* If user clicks Enter key, same as button click $submitButton */
+$("#astronautName").keyup(function(event) {
+  if (event.keyCode === 13) {
+      $($submitButton).click();
+  }
+});
 
 
 
@@ -274,7 +283,9 @@ const setTimer = function setTimer() {
 
          /* deathScreen() */; 
          /* TODO: change audio here */
-         /* TODO: change astronaut image */
+         
+         
+       
          $(".astronautSleep img").fadeOut(1000);
          $(".astronautFun img").fadeOut(1000);
          $(".astronautEating img").fadeOut(1000);
