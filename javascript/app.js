@@ -44,6 +44,9 @@ $(".astronautFun img").hide();
 $(".astronautSleep img").hide();
 $(".astronautEating img").hide();
 $(".astronautEvolution1 img").hide();
+$(".astronautEvolvedSightseeing img").hide();
+$(".astronautEvolvedSleeping img").hide();
+$(".astronautEvolvedEating img").hide();
 
 
 /* Input + Button for character name submission */
@@ -85,10 +88,6 @@ $("#astronautName").keyup(function(event) {
       $($submitButton).click();
   }
 });
-
-
-
-
 
 
   /* SECTION: User Interface Major Elements */
@@ -209,7 +208,17 @@ $(".sleepBox").on("click", function playerSleep(){
     sleepCount--;
     firstAstronaut.sleepLevel--;
     $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`);
-    
+    }; 
+    if(firstAstronaut.age >= 5) {
+    $(".astronaut img").hide();
+    $(".astronautSleep img").hide();
+    $(".astronautEating img").hide();
+    $(".astronautFun img").hide();
+    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolvedEating img").fadeOut(1000);
+    $(".astronautEvolvedSightseeing img").fadeOut(1000);
+    $(".astronautEvolvedSleeping img").fadeIn(1000);
+
     }
 
 }
@@ -229,6 +238,16 @@ $(".boredomBox").on("click", function playerFun(){
     boredCount--;
     firstAstronaut.boredLevel--;
     $("#boredTimer").text(`Boredom Level: ${firstAstronaut.boredLevel}.`);
+    } if(firstAstronaut.age >= 5) {
+      $(".astronaut img").hide();
+    $(".astronautSleep img").hide();
+    $(".astronautEating img").hide();
+    $(".astronautFun img").hide();
+    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolvedSleeping img").fadeOut(1000);
+    $(".astronautEvolvedEating img").fadeOut(1000);
+    $(".astronautEvolvedSightseeing img").fadeIn(1000);
+
     }
     
 }
@@ -246,10 +265,20 @@ $(".foodBox").on("click", function playerEat(){
     if (foodCount < 1) { 
         $(".foodBox").css("pointer-events:", "none;")   
     } else if (foodCount >= 1) {
-    
         foodCount--;
         firstAstronaut.hungerLevel--;
         $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`);  
+    }
+    if(firstAstronaut.age >= 5) {
+      $(".astronaut img").hide();
+    $(".astronautSleep img").hide();
+    $(".astronautEating img").hide();
+    $(".astronautFun img").hide();
+    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolvedSightseeing img").fadeOut(1000);
+    $(".astronautEvolvedSleeping img").fadeOut(1000);
+    $(".astronautEvolvedEating img").fadeIn(1000);
+
     }
 }
 )
@@ -269,6 +298,7 @@ const setTimer = function setTimer() {
     console.log("Every 60seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
+    firstAstronaut.age++;
     if(time === 5){ 
         const $evolveStage1Dialogue1 = $(`<p id="evolveStage1Dialogue1"> ${firstAstronaut.name}... You've been here awfully long! You still haven't died nor have you found any friends on this planet. Your body seems to be adapting rather well!</p>`)
         const $evolveStage1Dialogue2 = $(`<p id="evolveStage1Dialogue2"> You look like... you're changing... The atmospheric influence on your body is unprecedented. I will be looking forward to analyzing you further, if you survive that is...</p>`)
@@ -322,6 +352,7 @@ class Player {
       this.hungerLevel = foodCount;
       this.sleepLevel = sleepCount;
       this.boredLevel = boredCount;
+      this.age = time;
       // assigned props
       this.name =  $playerName;
       
