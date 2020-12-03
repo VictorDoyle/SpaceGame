@@ -83,6 +83,7 @@ $submitButton.on("click", function logPlayerName(){
 /*             TIMERS                */
 
 
+
 /*   Timer for Sleep  */
  let sleepCount = 1;
 
@@ -92,8 +93,9 @@ const sleepTimer = function sleepTimer() {
     console.log("Every 50 seconds, character's sleep level increases by 1. The count is now:", sleepCount);
     sleepCount++;
     firstAstronaut.sleepLevel++;
+    $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`)
     if(sleepCount >= 10){
-        clearInterval(timer);
+        /* clearInterval(timer); */
         const $deathDialogue1 = $(`<p id="deathDialogue1"> ${firstAstronaut.name}... You died of exhaustion... Who knew life could be so exhausting?</p>`)
     $('.dialogueBox').append($deathDialogue1);
     $("#speechOptionTwo").fadeOut(1000);
@@ -104,7 +106,7 @@ const sleepTimer = function sleepTimer() {
       
    
   };
-  const timer = setInterval(updateSleepTime, 50 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.sleep = setInterval(updateSleepTime, 2 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -117,8 +119,9 @@ const foodTimer = function foodTimer() {
     console.log("Every 50 seconds, character's hunger level increases by 1. The count is now:", foodCount);
     foodCount++;
     firstAstronaut.hungerLevel++;
+    $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`)
     if(foodCount >= 10){
-        clearInterval(timer);
+        /* clearInterval(timer); */
         const $deathDialogue2 = $(`<p id="deathDialogue2"> ${firstAstronaut.name}... Did you forget about all those snacks you have? They could have really helped. Not anymore!</p>`)
         $('.dialogueBox').append($deathDialogue2);
         $("#speechOptionTwo").fadeOut(1000);
@@ -129,7 +132,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  const timer = setInterval(updateFoodTime, 10 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.hunger = setInterval(updateFoodTime, 3 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -141,8 +144,9 @@ const boredTimer = function boredTimer() {
     console.log("Every 30 seconds, character's boredom level increases by 1. The count is now:", boredCount);
     boredCount++;
     firstAstronaut.boredLevel++;
+    $("#boredTimer").text(`Boredom Level: ${firstAstronaut.boredLevel}.`)
     if(boredCount >= 10){
-        clearInterval(timer);
+       /*  clearInterval(timer); */
         const $deathDialogue3 = $(`<p id="deathDialogue3"> ${firstAstronaut.name}. I know existence can seem futile, but dying of an existential crisis while abroad seems questionable... Your memories of Nietzsche cannot help you now</p>`)
         $('.dialogueBox').append($deathDialogue3);
         $("#speechOptionTwo").fadeOut(1000);
@@ -153,8 +157,24 @@ const boredTimer = function boredTimer() {
        
    
   };
-  const timer = setInterval(updateBoredTime, 1 * 1000);   /* FIXME: Change values back to 30 after testing */
+  timers.bored = setInterval(updateBoredTime, 1 * 1000);   /* FIXME: Change values back to 30 after testing */
 }; 
+
+
+
+
+/* COLLECT ALL TIMERS HERE FOR STOP TIME LATER */
+
+const timers = {
+  hunger: null,
+  bored: null,
+  sleep: null,
+  age: null,
+}
+
+
+
+
 
 
 /*             BUTTON CLICK EVENT LISTENERS FOR USER ELEMENT ICONS                */
@@ -207,9 +227,9 @@ $(".foodBox").on("click", function playerEat(){
     $(".astronautFun img").fadeOut(1000);
     $(".astronautEating img").fadeIn(1000);
 
-    if (foodCount <= 1) { 
+    if (foodCount < 1) { 
         $(".foodBox").css("pointer-events:", "none;")   
-    } else if (foodCount > 1) {
+    } else if (foodCount >= 1) {
     
         foodCount--;
         firstAstronaut.hungerLevel--;
@@ -221,6 +241,7 @@ $(".foodBox").on("click", function playerEat(){
 
 
 /* SECTION: User Interface Minor Elements */
+
 
 /* AGE BAR */
 
@@ -245,9 +266,8 @@ const setTimer = function setTimer() {
         clearInterval(timer); */
     
   };
-  const timer = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
 };
-
 
 
 
@@ -263,15 +283,7 @@ class Player {
       this.name =  $playerName;
       
     }
-    getHungry() {
-      console.log("I'm feeling hungry, maybe it's time for a snack?");
-    }
-    getBored() {
-    console.log("I am feeling an existential crisis coming soon. I need something to do...");
-  }
-    getSleepy() {
-    console.log("Is that a purple unicorn? Urgh, I think I need a nap. I'm starting to see things...");
-  }
+    /* Class Player for later operational use */
   };
 
 
@@ -280,7 +292,12 @@ class Player {
  /*  function deathScreen(); */ //FIXME: readd
 
 function deathScreen(){
+    clearInterval(timers.hunger);
+    clearInterval(timers.bored);
+    clearInterval(timers.sleep);
     $("div .partOne").fadeOut(1000);
-    $(".partTwo").fadeOut(8000);       
+    $(".partTwo").fadeOut(9000);       
     $(".partThree").fadeIn(8000);
 }
+
+/* make a reset button on death page */
