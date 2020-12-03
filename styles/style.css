@@ -30,6 +30,13 @@ html{
     overflow-x: hidden;
   }
 
+  /* Creating Responsive Layout for Browser window size change without @media */
+  .responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
   .gameMusic {      /* FIXME: Later version build custom player */
     position: absolute;
     justify-content: left;

@@ -21,6 +21,7 @@
 
 
   <div class="gameMusic">
+    <!-- music from Space-22 / The First Space Walk Album Track 1 -->
   <audio controls id="gameSoundtrack">
     <source  src="media/sounds/TheFirstSpaceWalk_compressedaudioforgame.mp3" type="audio/mp3">
   </audio>
@@ -70,7 +71,7 @@
   </div>
 
   <!-- HAL42 EVIL AI Visual Effect with boxshadow effects -->
-  <div class="evilHal">
+  <div class="evilHal responsive">
 </div>
 
 </div>
@@ -101,12 +102,12 @@
 </div>
 
   <!-- Dialogue Box Between User & AI -->
-  <div class="dialogueBox">
+  <div class="dialogueBox responsive">
     <p id="speechOptionOne">“I am HAL42, your AI that will guide you through this survival until others arrive. For now, you must focus on eating, sleeping and keeping your mind active so as to not become too bored. Stray too far from these requirements and you’ll meet your end earlier than anticipated”.
     </p>
 
 <!-- Input name of Character box -->
-    <div class="nameBox">
+    <div class="nameBox responsive"> <!-- FIXME: Add event listener for "enter" keyboard press as well as  submit click -->
       
       <input type="text" id="astronautName"  placeholder="Enter Name" maxlength='15' />
       <button class="submitButton">Tell HAL42</button>
@@ -115,7 +116,7 @@
   </div>
  
  <!-- User Interface Major Elements -->
-<div class="uiElements">
+<div class="uiElements responsive">
 
     <!-- Icons for Sleep -->
     <div class="sleepBox">
