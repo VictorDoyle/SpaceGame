@@ -285,7 +285,7 @@ const setTimer = function setTimer() {
          /* TODO: change audio here */
          
          
-       
+         $(".astronaut img").fadeOut(1000);
          $(".astronautSleep img").fadeOut(1000);
          $(".astronautFun img").fadeOut(1000);
          $(".astronautEating img").fadeOut(1000);
@@ -340,6 +340,7 @@ function deathScreen(){
     $("div .partOne").fadeOut(1000);
     $(".partTwo").fadeOut(8000);       
     $(".partThree").fadeIn(8000); /* FIXME: Not fading in properly*/
+    $(".retryGame").fadeIn(3000).delay(3000);
 }
 
 
@@ -357,6 +358,7 @@ function easterEggDeathScreen(){
 }
 
 /* RETRY/REST BUTTON */
+
 
 $(".retryGame").on("click", function restartGame(){
   location.reload();
