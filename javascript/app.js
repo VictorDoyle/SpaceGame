@@ -7,7 +7,15 @@ $(".partThree").hide();
 
 /* ANIMATION TO FADE OUT WHEN PLAY BUTTON CLICKED*/
 
+/* added game soundtrack to work on click */
+let gameSoundtrack = document.getElementById("gameSoundtrack");
+
+function playAudio() {
+  gameSoundtrack.play();
+}
+
 $(".playGame").on("click", function fadeOutofScreen(){
+    playAudio();
     $("div .partOne").fadeOut(1000);
     $(".partTwo").show();       /* FIXME: Make smoother animation FadeIn for Part Two */
     $(".astronaut img").fadeIn(1000);
@@ -33,6 +41,8 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 $(".astronautFun img").hide();
 $(".astronautSleep img").hide();
 $(".astronautEating img").hide();
+$(".astronautDying img").hide();
+
 
 /* Input + Button for character name submission */
 
@@ -126,7 +136,7 @@ const foodTimer = function foodTimer() {
         $('.dialogueBox').append($deathDialogue2);
         $("#speechOptionTwo").fadeOut(1000);
         $("#deathDialogue2").fadeIn(1000); 
-        /* death screen/last screen show */ 
+        /* death screen/last screen show */
         deathScreen();
       }
         
@@ -298,6 +308,6 @@ function deathScreen(){
     $("div .partOne").fadeOut(1000);
     $(".partTwo").fadeOut(9000);       
     $(".partThree").fadeIn(8000);
+    /* make a reset/try again button on death page */
 }
 
-/* make a reset button on death page */

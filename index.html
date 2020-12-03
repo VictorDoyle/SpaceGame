@@ -18,6 +18,15 @@
 <!-- FOR THE PURPOSE OF SINGLE PAGE BROWSER GAME & NO SERVER, CLASSIFYING DIVS PER GAMEPLAY SEQUENCED PARTS -->
 
 <body>
+
+
+  <div class="gameMusic">
+  <audio controls id="gameSoundtrack">
+    <source  src="media/sounds/TheFirstSpaceWalk_compressedaudioforgame.mp3" type="audio/mp3">
+  </audio>
+
+
+</div>
 <div class="container">
   <div class="partOne">
     <!-- PART ONE IS INTRODUCTION TO GAME -->
@@ -66,10 +75,13 @@
 
 </div>
 
+
+
  <!-- PART TWO IS MAIN GAMEPLAY -->
 <div class="partTwo">
   
   <!-- Base Static Astronaut Image -->
+  <div class="allAstronauts">
   <div class="astronaut"> 
     <img src="media/images/astronaut_static.png" alt="astronaut-static" width="350" height="350">
   </div>
@@ -85,10 +97,8 @@
   <div class="astronautEating"> 
     <img src="media/images/astronaut-eating.png" alt="astronaut-eating" width="350" height="350">
   </div>
-  <!-- Astronaut Image for when User loses game -->
-  <div class="astronautDying"> 
-    <img src="media/images/astronaut-dead.png" alt="astronaut-dying" width="350" height="350">
-  </div>
+
+</div>
 
   <!-- Dialogue Box Between User & AI -->
   <div class="dialogueBox">
@@ -154,6 +164,11 @@
 
   <div class="goodbyeHal">
   </div>
+
+  <!-- Astronaut Image for when User loses game -->
+<!-- <div class="astronautDying">     //NOTE: keep for later use
+  <img src="media/images/astronaut-dead.png" alt="astronaut-dying" width="350" height="350">
+</div> -->
 
   </div>
 

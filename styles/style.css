@@ -30,6 +30,12 @@ html{
     overflow-x: hidden;
   }
 
+  .gameMusic {      /* FIXME: Later version build custom player */
+    position: absolute;
+    justify-content: left;
+    bottom: 15px;
+  }
+
   /* Element Styles */
 
   .typewriter1 p {
