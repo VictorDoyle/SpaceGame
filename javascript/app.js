@@ -21,8 +21,8 @@ function playAudio() {
 $(".playGame").on("click", function fadeOutofScreen(){
     playAudio();
     $("div .partOne").fadeOut(1000);
-    $(".partTwo").show();       /* FIXME: Make smoother animation FadeIn for Part Two */
-    $(".astronaut img").fadeIn(1000);
+    $(".partTwo").fadeIn(700);
+    $(".astronaut img").delay(2000).fadeIn(1000);
 }
 )
 
@@ -30,9 +30,9 @@ $(".playGame").on("click", function fadeOutofScreen(){
 /* ANIMATION TO FADE OUT WHEN NO DONT PLAY BUTTON CLICKED*/
 
 $(".abortGame").on("click", function fadeOutofScreen(){
-    $("div.partOne").fadeOut(500);               // FIXME: fix fadeout animation
+    $("div.partOne").hide();               // FIXME: fix fadeout animation
    $(".earlyQuitter").show();
-   $("div.evilHal img").fadeIn(1000);      //FIXME: Animation wont work
+   $("div.evilHal img").fadeIn(1000);      
 
 }
 )
@@ -40,7 +40,7 @@ $(".abortGame").on("click", function fadeOutofScreen(){
 
 /* SECTION: GAME RULES/BASICS JAVASCRIPT */
 
-/* FIXME: Animations not showing when img el hidden and then shown. fix after MVP */
+$(".astronaut img").hide();
 $(".astronautFun img").hide();
 $(".astronautSleep img").hide();
 $(".astronautEating img").hide();
@@ -197,11 +197,10 @@ const timers = {
 
 /*   Event Click for Sleep  */
 $(".sleepBox").on("click", function playerSleep(){     
-    $(".astronaut img").fadeOut(1000);
-    $(".astronautFun img").fadeOut(1000);
-    $(".astronautEating img").fadeOut(1000);
-    $(".astronautSleep img").show();
-   
+    $(".astronaut img").hide();
+    $(".astronautFun img").hide();
+    $(".astronautEating img").hide();
+    $(".astronautSleep img").fadeIn(1000);
     if (sleepCount <= 1) { 
         $(".sleepBox").css("pointer-events:", "none;")   
     } else if (sleepCount > 1) {
@@ -216,8 +215,8 @@ $(".sleepBox").on("click", function playerSleep(){
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
     $(".astronautEvolution1 img").hide();
-    $(".astronautEvolvedEating img").fadeOut(1000);
-    $(".astronautEvolvedSightseeing img").fadeOut(1000);
+    $(".astronautEvolvedEating img").hide();
+    $(".astronautEvolvedSightseeing img").hide();
     $(".astronautEvolvedSleeping img").fadeIn(1000);
 
     }
@@ -227,10 +226,10 @@ $(".sleepBox").on("click", function playerSleep(){
 
 /*   Event Click for Boredom  */
 $(".boredomBox").on("click", function playerFun(){     
-    $(".astronaut img").fadeOut(800);
-    $(".astronautSleep img").fadeOut(800);
-    $(".astronautEating img").fadeOut(800);
-    $(".astronautFun img").fadeIn(800);
+    $(".astronaut img").hide();
+    $(".astronautSleep img").hide();
+    $(".astronautEating img").hide();
+    $(".astronautFun img").fadeIn(1000);
     
     if (boredCount <= 1) { 
         $(".boredomBox").css("pointer-events:", "none;")   
@@ -245,8 +244,8 @@ $(".boredomBox").on("click", function playerFun(){
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
     $(".astronautEvolution1 img").hide();
-    $(".astronautEvolvedSleeping img").fadeOut(1000);
-    $(".astronautEvolvedEating img").fadeOut(1000);
+    $(".astronautEvolvedSleeping img").hide();
+    $(".astronautEvolvedEating img").hide();
     $(".astronautEvolvedSightseeing img").fadeIn(1000);
 
     }
@@ -260,9 +259,9 @@ $(".boredomBox").on("click", function playerFun(){
 /*   Event Click for Food  */
 
 $(".foodBox").on("click", function playerEat(){     
-    $(".astronaut img").fadeOut(1000);
-    $(".astronautSleep img").fadeOut(1000);
-    $(".astronautFun img").fadeOut(1000);
+    $(".astronaut img").hide();
+    $(".astronautSleep img").hide();
+    $(".astronautFun img").hide();
     $(".astronautEating img").fadeIn(1000);
 
     if (foodCount < 1) { 
@@ -278,8 +277,8 @@ $(".foodBox").on("click", function playerEat(){
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
     $(".astronautEvolution1 img").hide();
-    $(".astronautEvolvedSightseeing img").fadeOut(1000);
-    $(".astronautEvolvedSleeping img").fadeOut(1000);
+    $(".astronautEvolvedSightseeing img").hide();
+    $(".astronautEvolvedSleeping img").hide();
     $(".astronautEvolvedEating img").fadeIn(1000);
 
     }
@@ -373,7 +372,7 @@ function deathScreen(){
     clearInterval(timers.age);
     $("div .partOne").fadeOut(1000);
     $(".partTwo").fadeOut(8000);       
-    $(".partThree").fadeIn(8000); /* FIXME: Not fading in properly*/
+    $(".partThree").fadeIn(8000);
     $(".retryGame").fadeIn(3000).delay(3000);
 }
 
@@ -384,11 +383,11 @@ function easterEggDeathScreen(){
   clearInterval(timers.bored);
   clearInterval(timers.sleep);
   clearInterval(timers.age);
-  $("div .partOne").fadeOut(1000);
-  $(".partTwo").fadeOut(6000);       
-  $(".easterEggDeath").fadeIn(3000);
-   $("div.evilHal img").fadeIn(3000);
-   $(".retryGame").fadeIn(5000);
+  $("div .partOne").hide();
+  $(".partTwo").fadeOut(5000);
+  $(".easterEggDeath").delay(5000).fadeIn(1000);
+   $("div.evilHal img").delay(5000).fadeIn(1000);
+   $(".retryGame").delay(2000).fadeIn(4000);
 }
 
 /* RETRY/REST BUTTON */
