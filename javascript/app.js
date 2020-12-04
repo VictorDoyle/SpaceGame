@@ -264,9 +264,9 @@ $(".foodBox").on("click", function playerEat(){
     $(".astronautFun img").hide();
     $(".astronautEating img").fadeIn(1000);
 
-    if (foodCount < 1) { 
+    if (foodCount <= 1) { 
         $(".foodBox").css("pointer-events:", "none;")   
-    } else if (foodCount >= 1) {
+    } else if (foodCount > 1) {
         foodCount--;
         firstAstronaut.hungerLevel--;
         $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`);  
