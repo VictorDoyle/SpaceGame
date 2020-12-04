@@ -11,7 +11,6 @@
 - Add changing Background images with 80% opacity with Z-index behind UI elements
 - Custom Music Player On/Off button instead of standard audio controls.
 - Added Music change for character evolution.
-- Revamped UI Icons for Food/Sleep/Boredom.
 - Create array sets of dialogue with randomizer.
 
 ---
