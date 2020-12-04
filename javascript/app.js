@@ -2,6 +2,7 @@
 
 /* LATER GAME SEQUENCES AND SCREENS HAVE TO BEGIN AT HIDDEN */
 $(".earlyQuitter").hide();
+$(".easterEggDeath").hide();
 $(".partTwo").hide();
 $(".partThree").hide();
 $("#evolvedSoundtrack").hide();
@@ -214,7 +215,7 @@ $(".sleepBox").on("click", function playerSleep(){
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
-    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolution1 img").hide();
     $(".astronautEvolvedEating img").fadeOut(1000);
     $(".astronautEvolvedSightseeing img").fadeOut(1000);
     $(".astronautEvolvedSleeping img").fadeIn(1000);
@@ -226,10 +227,10 @@ $(".sleepBox").on("click", function playerSleep(){
 
 /*   Event Click for Boredom  */
 $(".boredomBox").on("click", function playerFun(){     
-    $(".astronaut img").fadeOut(1000);
-    $(".astronautSleep img").fadeOut(1000);
-    $(".astronautEating img").fadeOut(1000);
-    $(".astronautFun img").fadeIn(1000);
+    $(".astronaut img").fadeOut(800);
+    $(".astronautSleep img").fadeOut(800);
+    $(".astronautEating img").fadeOut(800);
+    $(".astronautFun img").fadeIn(800);
     
     if (boredCount <= 1) { 
         $(".boredomBox").css("pointer-events:", "none;")   
@@ -243,7 +244,7 @@ $(".boredomBox").on("click", function playerFun(){
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
-    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolution1 img").hide();
     $(".astronautEvolvedSleeping img").fadeOut(1000);
     $(".astronautEvolvedEating img").fadeOut(1000);
     $(".astronautEvolvedSightseeing img").fadeIn(1000);
@@ -252,6 +253,8 @@ $(".boredomBox").on("click", function playerFun(){
     
 }
 )
+
+/* $("img").attr("src", "mediafilename.jpg") */
 
 
 /*   Event Click for Food  */
@@ -274,7 +277,7 @@ $(".foodBox").on("click", function playerEat(){
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
     $(".astronautFun img").hide();
-    $(".astronaut-dead img").fadeOut(1000);
+    $(".astronautEvolution1 img").hide();
     $(".astronautEvolvedSightseeing img").fadeOut(1000);
     $(".astronautEvolvedSleeping img").fadeOut(1000);
     $(".astronautEvolvedEating img").fadeIn(1000);
@@ -382,8 +385,8 @@ function easterEggDeathScreen(){
   clearInterval(timers.sleep);
   clearInterval(timers.age);
   $("div .partOne").fadeOut(1000);
-  $(".partTwo").fadeOut(8000);       
-  $(".earlyQuitter").fadeIn(3000);
+  $(".partTwo").fadeOut(6000);       
+  $(".easterEggDeath").fadeIn(3000);
    $("div.evilHal img").fadeIn(3000);
    $(".retryGame").fadeIn(5000);
 }
