@@ -4,18 +4,23 @@
 
 ![SpaceGameMainIntro](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/images/InsanityDescent-SpaceGame.jpg?raw=true)
 
-## Wireframes/Project Outline
+## Fixes Needed for Version 1.2
 
-- Whimsical for Wireframe outline
-- 
+- Browser Support & Functionality
+- Add @media restrictions so browser can be resized and not lose content aesthetic
+- Add changing Background images with 80% opacity with Z-index behind UI elements
+- Custom Music Player On/Off button instead of standard audio controls.
+- Added Music change for character evolution.
+- Revamped UI Icons for Food/Sleep/Boredom.
+- Create array sets of dialogue with randomizer.
 
 ---
 ## Introduction
-Project Zero -- Space Game: The Insanity Descent is a time based browser experience where an astronaut seeking interplanetary travel has found complications after having crashed on an unknown planet, in an unrecognizable planetary system. The Astronaut will have to eat, sleep and find productivity amongst this newly discovered environment, or risk dying a lonesome death.
+Project Zero -- Space Game: The Insanity Descent is a time based browser experience where an astronaut seeking interplanetary travel has found complications after having crashed on an unknown planet, in an unrecognizable planetary system. Accompanied by a mischievous and questionable AI, HAL42, the Astronaut will have to eat, sleep and find productivity on this newly discovered environment, or risk dying a lonesome death.
 
 ## Main Narrative
 
-1. His spaceship has no fuel, he had a hard landing and suffered a blunt trauma to the head. Can’t remember how he got there or what his mission is, but he just needs to survive.
+1. The astronaut's spaceship broke through a Planet's exosphere without controlled deceleration. The Astronaut wakes up with no memory of events. The spaceship has no fuel and all that's left to do is survive. Eat periodically as well as sleep and staying productive in order for the Astronaut to survive. The AI HAL42 helps the Astronaut throughout his survival adventure.
 
 ## Wire Frames / User Story
 
@@ -36,9 +41,9 @@ If the User Plays the Game but does not help the astronaut in time and lets limi
 ![SpaceGameIntroduction3](https://git.generalassemb.ly/victordoyle/SpaceGame/blob/master/media/wireframe/endGameWindows.png)
 
 ## Resources
-1. Game Music from Space-22.
+1. Game Music from Space-22 "The First Space Walk" Album / Compressed to mp3 from .wav
 2. Dead Astronaut Image taken from: http://brandonvickerd.com/dead-astronaut
-3. Astronaut_static / astronaut-eating / astronaut-sleeping / astronaut-sightseeing are photoshopped & edited versions of NASA Open Domain Images.
+3. Astronaut_static / astronaut-eating / astronaut-sleeping / astronaut-sightseeing are photoshopped & edited versions of NASA Open Domain Images (Apollo).
 4. Cryopod Image for Sleep Icon taken from https://www.turbosquid.com/FullPreview/Index.cfm/ID/1217889.
 5. Multi-tool scanner image taken from https://www.xainesworld.com/wp-content/uploads/2019/08/Alien-MT-7.png. 
 
