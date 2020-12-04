@@ -370,10 +370,10 @@ function deathScreen(){
     clearInterval(timers.bored);
     clearInterval(timers.sleep);
     clearInterval(timers.age);
-    $("div .partOne").fadeOut(1000);
-    $(".partTwo").fadeOut(8000);       
-    $(".partThree").fadeIn(8000);
-    $(".retryGame").fadeIn(3000).delay(3000);
+    $("div .partOne").hide();
+    $(".partTwo").fadeOut(5000);       
+    $(".partThree").delay(5000).fadeIn(1000);
+    $(".retryGame").delay(2000).fadeIn(4000);
 }
 
 
