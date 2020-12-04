@@ -122,7 +122,7 @@ const sleepTimer = function sleepTimer() {
       
    
   };
-  timers.sleep = setInterval(updateSleepTime, 20 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.sleep = setInterval(updateSleepTime, 8 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -148,7 +148,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  timers.hunger = setInterval(updateFoodTime, 15 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.hunger = setInterval(updateFoodTime, 5 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -173,7 +173,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  timers.bored = setInterval(updateBoredTime, 10 * 1000);   /* FIXME: Change values back to 15 after testing */
+  timers.bored = setInterval(updateBoredTime, 3 * 1000);   /* FIXME: Change values back to 15 after testing */
 }; 
 
 
