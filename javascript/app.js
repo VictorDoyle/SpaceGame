@@ -337,11 +337,11 @@ const setTimer = function setTimer() {
         $("#evolveStage2Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
     }
 
-    if(time >= 3) {
+    if(time >= 17) {
       easterEggDeathScreen();
     }
   };
-  timers.age = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 30 * 1000); /* Every 1 minute, 1 day goes by */
 };
 
 

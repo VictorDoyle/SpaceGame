@@ -477,7 +477,7 @@ html{
   letter-spacing: 0;
   padding-left: 10px;
   animation: typing 3.5s steps(44, end), blink-caret .75s step-end 4.1;
-  animation-delay: 4s;
+ 
   }
   
   .endTypewriter2 p {
@@ -492,7 +492,7 @@ html{
     padding-left: 10px;
     opacity: 0;
     animation: typing 3.5s steps(44, end), blink-caret .75s step-end 4.1, slidein 1s ease 3.5s forwards;
-    animation-delay: 6s;
+    animation-delay: 2s;
   }
   .endTypewriter3 p {
       overflow: hidden;
@@ -506,7 +506,7 @@ html{
       padding-left: 10px;
       opacity: 0;
       animation: typing 3.5s steps(44, end), blink-caret .75s step-end /* add infinite for continuous blinking animation */, slidein 1s ease 3.5s forwards;
-      animation-delay: 9s;
+      animation-delay: 4s;
     }
 
     .goodbyeHal {
