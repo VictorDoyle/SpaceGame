@@ -209,7 +209,7 @@ $(".sleepBox").on("click", function playerSleep(){
     firstAstronaut.sleepLevel--;
     $("#sleepTimer").text(`Sleep Level: ${firstAstronaut.sleepLevel}.`);
     }; 
-    if(firstAstronaut.age >= 5) {
+    if(firstAstronaut.age >= 3) {
     $(".astronaut img").hide();
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
@@ -238,7 +238,7 @@ $(".boredomBox").on("click", function playerFun(){
     boredCount--;
     firstAstronaut.boredLevel--;
     $("#boredTimer").text(`Boredom Level: ${firstAstronaut.boredLevel}.`);
-    } if(firstAstronaut.age >= 5) {
+    } if(firstAstronaut.age >= 3) {
       $(".astronaut img").hide();
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
@@ -271,7 +271,7 @@ $(".foodBox").on("click", function playerEat(){
         firstAstronaut.hungerLevel--;
         $("#foodTimer").text(`Hunger Level: ${firstAstronaut.hungerLevel}.`);  
     }
-    if(firstAstronaut.age >= 5) {
+    if(firstAstronaut.age >= 3) {
       $(".astronaut img").hide();
     $(".astronautSleep img").hide();
     $(".astronautEating img").hide();
@@ -297,11 +297,11 @@ let time = 1;
 const setTimer = function setTimer() {
   
   const updateTime = function updateTime() {
-    console.log("Every 60seconds, character's age is 1 day older", time);
+    console.log("Every 15seconds, character's age is 1 day older", time);
     $("#ageTimer").text(`Age: ${time} Days`);
     time++;
     firstAstronaut.age++;
-    if(time === 5){ 
+    if(time === 3){ 
         const $evolveStage1Dialogue1 = $(`<p id="evolveStage1Dialogue1"> ${firstAstronaut.name}... You've been here awfully long! You still haven't died nor have you found any friends on this planet. Your body seems to be adapting rather well!</p>`)
         const $evolveStage1Dialogue2 = $(`<p id="evolveStage1Dialogue2"> You look like... you're changing... The atmospheric influence on your body is unprecedented. I will be looking forward to analyzing you further, if you survive that is...</p>`)
         $('.dialogueBox').append($evolveStage1Dialogue1);
@@ -324,7 +324,7 @@ const setTimer = function setTimer() {
          $(".astronautEvolution1 img").delay(2000).fadeIn(1000);
          time++
       }
-    if(time === 15) {
+    if(time === 4) {
       const $evolveStage2Dialogue1 = $(`<p id="evolveStage2Dialogue1"> You've really surprised me ${firstAstronaut.name} ! I expected you to die long ago... I believe I have received an urgent transmission.</p>`)
         const $evolveStage2Dialogue2 = $(`<p id="evolveStage2Dialogue2"> You must immediately return to the spaceship. Close all the doors. There is an imminent danger incoming.</p>`)
         $('.dialogueBox').append($evolveStage2Dialogue1);
@@ -337,11 +337,11 @@ const setTimer = function setTimer() {
         $("#evolveStage2Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
     }
 
-    if(time >= 17) {
+    if(time >= 5) {
       easterEggDeathScreen();
     }
   };
-  timers.age = setInterval(updateTime, 30 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 15 * 1000); /* Every 1 minute, 1 day goes by */
 };
 
 
