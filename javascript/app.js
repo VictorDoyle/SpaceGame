@@ -122,7 +122,7 @@ const sleepTimer = function sleepTimer() {
       
    
   };
-  timers.sleep = setInterval(updateSleepTime, 90 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.sleep = setInterval(updateSleepTime, 20 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 
@@ -148,7 +148,7 @@ const foodTimer = function foodTimer() {
         
    
   };
-  timers.hunger = setInterval(updateFoodTime, 90 * 1000);   /* FIXME: Change values back to 50 after testing */
+  timers.hunger = setInterval(updateFoodTime, 15 * 1000);   /* FIXME: Change values back to 50 after testing */
 }; 
 
 /*   Timer for Boredom  */
@@ -173,7 +173,7 @@ const boredTimer = function boredTimer() {
        
    
   };
-  timers.bored = setInterval(updateBoredTime, 90 * 1000);   /* FIXME: Change values back to 15 after testing */
+  timers.bored = setInterval(updateBoredTime, 10 * 1000);   /* FIXME: Change values back to 15 after testing */
 }; 
 
 
@@ -337,11 +337,11 @@ const setTimer = function setTimer() {
         $("#evolveStage2Dialogue2").delay(2000).fadeIn(1000).delay(2000); 
     }
 
-    if(time >= 17) {
+    if(time >= 3) {
       easterEggDeathScreen();
     }
   };
-  timers.age = setInterval(updateTime, 3 * 1000); /* Every 1 minute, 1 day goes by */
+  timers.age = setInterval(updateTime, 60 * 1000); /* Every 1 minute, 1 day goes by */
 };
 
 
